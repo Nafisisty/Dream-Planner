@@ -1,11 +1,12 @@
-﻿<!-- === BEGIN HEADER === -->
+﻿
+<!-- === BEGIN HEADER === -->
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
 <html lang="en">
 <!--<![endif]-->
-<head>
+<head> 
     <title>Dream Planner</title>
     <!-- Meta -->
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -25,14 +26,19 @@
         <div id="container_header" class="container">
             <div id="header" class="row">
                 <div class="col-md-12 margin-top-15">
+                    <!-- Header Social Icons -->
                     <ul class="social-icons circle pull-right">
                         <li class="social-twitter">
                             <a href="https://twitter.com/" target="_blank" title="Twitter"></a>
-                            </li>
+                        </li>
+                        <li class="social-facebook">
+                            <a href="https://www.facebook.com" target="_blank" title="Facebook"></a>
+                        </li>
                         <li class="social-youtube">
                             <a href="https://www.youtube.com/" target="_blank" title="Youtube"></a>
                         </li>
                     </ul>
+                    <!-- End Header Social Icons -->
                 </div>
                 <div class="clear"></div>
             </div>
@@ -48,7 +54,9 @@
                 <div id="container_hornav" class="container no-padding">
                     <!-- Logo -->
                     <div class="logo">
-
+                        <a href="index.html">
+                            <img src="~/assets/img/logo.png" alt="Logo" />
+                        </a>
                     </div>
                     <!-- End Logo -->
                     <!-- Slogan -->
@@ -62,38 +70,185 @@
                                     <li>
                                         @Html.ActionLink("Home", "Index", "Home")
                                     </li>
+                                    @*<li>
+                                        <span>Features</span>
+                                        <ul>
+                                            <li class="parent">
+                                                <span>Typography</span>
+                                                <ul>
+                                                    <li>
+                                                        <a href="features-typo-basic.html">Basic Typography</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="features-typo-blockquotes.html">Blockquotes</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="parent">
+                                                <span>Components</span>
+                                                <ul>
+                                                    <li>
+                                                        <a href="features-labels.html">Labels</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="features-progress-bars.html">Progress Bars</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="features-panels.html">Panels</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="features-pagination.html">Pagination</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="parent">
+                                                <span>Icons</span>
+                                                <ul>
+                                                    <li>
+                                                        <a href="features-icons.html">Icons General</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="features-icons-social.html">Social Icons</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="features-icons-font-awesome.html">Font Awesome</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="features-icons-glyphicons.html">Glyphicons</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="features-testimonials.html">Testimonials</a>
+                                            </li>
+                                            <li>
+                                                <a href="features-accordions-tabs.html">Accordions & Tabs</a>
+                                            </li>
+                                            <li>
+                                                <a href="features-buttons.html">Buttons</a>
+                                            </li>
+                                            <li>
+                                                <a href="features-carousels.html">Carousels</a>
+                                            </li>
+                                            <li>
+                                                <a href="features-grid.html">Grid System</a>
+                                            </li>
+                                            <li>
+                                                <a href="features-animate-on-scroll.html">Animate On Scroll</a>
+                                            </li>
+                                        </ul>
+                                    </li>*@
+
                                     <li>
                                         <span>Services</span>
                                         <ul>
                                             <li>
-                                                <a href="#">Our Services</a>
+                                                <a href="features-testimonials.html">Our Services</a>
                                             </li>
                                             <li>
-                                                <a href="#">Wedding</a>
+                                                <a href="features-testimonials.html">Wedding</a>
                                             </li>
                                             <li>
-                                                <a href="#">Birthday</a>
+                                                <a href="features-accordions-tabs.html">Birthday</a>
                                             </li>
-                                            <li>
-                                                <a href="#">Community</a>
+                                            <li class="parent">
+                                                <span>Community</span>
+                                                <ul>
+                                                    <li>
+                                                        <a href="features-labels.html">Muslim</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="features-progress-bars.html">Buddist</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="features-panels.html">Hindu</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="features-pagination.html">Christian</a>
+                                                    </li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </li>
 
+                                    @*<li>
+                                        <span>Gallery</span>
+                                        <ul>
+                                            <li>
+                                                <a href="portfolio-2-column.html">2 Column</a>
+                                            </li>
+                                            <li>
+                                                <a href="portfolio-3-column.html">3 Column</a>
+                                            </li>
+                                            <li>
+                                                <a href="portfolio-4-column.html">4 Column</a>
+                                            </li>
+                                            <li>
+                                                <a href="portfolio-6-column.html">6 Column</a>
+                                            </li>
+                                        </ul>
+                                    </li>*@
+
+                                    @*<li>
+                                        <span>Pages</span>
+                                        <ul>
+                                            <li>
+                                                <a href="pages-about-us.html">About Us</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages-services.html">Services</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages-faq.html">F.A.Q.</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages-about-me.html">About Me</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages-full-width.html">Full Width</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages-left-sidebar.html">Left Sidebar</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages-right-sidebar.html">Right Sidebar</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages-login.html">Login</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages-sign-up.html">Sign-Up</a>
+                                            </li>
+                                            <li>
+                                                <a href="pages-404.html">404 Error Page</a>
+                                            </li>
+                                        </ul>
+                                    </li>*@
+                                    @*<li>
+                                        <span>Blog</span>
+                                        <ul>
+                                            <li>
+                                                <a href="blog-list.html">Blog</a>
+                                            </li>
+                                            <li>
+                                                <a href="blog-single.html">Blog Single Item</a>
+                                            </li>
+                                        </ul>
+                                    </li>*@
                                     <li>
-                                        <a href="#">Gallery</a>
+                                        @Html.ActionLink("Gallery", "Gallery", "Home")
                                     </li>
 
                                     <li>
-                                        <a href="#">About Us</a>
+                                        @Html.ActionLink("About Us", "About", "Home")
                                     </li>
 
                                     <li>
-                                        <a href="#">Contact</a>
+                                        @Html.ActionLink("Contact", "Contact", "Home")
                                     </li>
 
                                     <li>
-                                        <a href="#">Log In</a>
+                                        <a href="contact.html">Log In</a>
                                     </li>
                                 </ul>
                             </div>
@@ -106,6 +261,55 @@
                 <div class="container body-content">
                     @RenderBody()
                 </div>
+                <div id="base" class="container padding-vert-30">
+                    <div class="row">
+                        <!-- Disclaimer -->
+                        <div class="col-md-8">
+                            <h3 class="margin-bottom-10">Disclaimer</h3>
+                            <p>All stock images on this demo website are for presentation purposes only, intended to represent a live site and are not included with this website.</p>
+                            <p>
+                                Most of the images used here are for only to present our demo project so that it looks more realistic and better. We dont have any copyright of these pictures. We are not going to upload these pictures on any server.
+                            </p>
+                            <div class="clearfix"></div>
+                        </div>
+                        <!-- End Disclaimer -->
+                        <!-- Contact Details -->
+                        <div class="col-md-4">
+                            <h3 class="margin-bottom-10">Contact Details</h3>
+                            <p>
+                                Vita Briggen,
+                                <br />Norra Smedjegatan 59 (ingång från gården),
+                                <br />37133 Karlskrona,
+                                <br />Sweden
+                            </p>
+                            <p>
+                                Email:
+                                <a href="mailto:nafisisty@gmail.com">nafisisty@gmail.com</a>
+                                <br />Website:
+                                <a href="http://www.google.com">www.google.com</a>
+                            </p>
+                        </div>
+                        <!-- End Contact Details -->
+                        <!-- Sample Menu -->
+                        @*<div class="col-md-3">
+                            <h3 class="margin-bottom-10">Sample Menu</h3>
+                            <ul class="menu">
+                                <li>
+                                    <a class="fa-tasks" href="#">Placerat facer possim</a>
+                                </li>
+                                <li>
+                                    <a class="fa-users" href="#">Quam nunc putamus</a>
+                                </li>
+                                <li>
+                                    <a class="fa-signal" href="#">Velit esse molestie</a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>*@
+                        <!-- End Sample Menu -->
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
                 <!-- Footer Menu -->
                 <div id="footermenu" class="container">
                     <div class="row">
@@ -114,13 +318,16 @@
                                 <a href="#" target="_blank">Services</a>
                             </li>
                             <li>
-                                <a href="#">Gallery</a>
+                                @Html.ActionLink("Gallery", "Gallery", "Home")
                             </li>
                             <li>
-                                <a href="#">About Us</a>
+                                @Html.ActionLink("About Us", "About", "Home")
                             </li>
                             <li>
-                                <a href="#">Contact</a>
+                                @Html.ActionLink("Contact", "Contact", "Home")
+                            </li>
+                            <li>
+                                <a class="fa-shopping-cart" href="#" target="_blank">Sample Link</a>
                             </li>
                         </ul>
                         <div class="clearfix"></div>
