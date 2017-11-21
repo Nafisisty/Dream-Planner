@@ -20,6 +20,10 @@ namespace DreamPlanner_Main.Controllers
             return View();
         }
 
+        public ActionResult Gallery()
+        {
+            return View();
+        }
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
