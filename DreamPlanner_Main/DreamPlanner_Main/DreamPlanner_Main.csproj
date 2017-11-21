@@ -196,6 +196,9 @@
     <Content Include="assets\img\frontpage\responsive.png" />
     <Content Include="assets\img\frontpage\responsive_screens.png" />
     <Content Include="assets\img\menu_arrow.png" />
+    <Content Include="assets\img\slideshow\slide1.jpg" />
+    <Content Include="assets\img\slideshow\slide2.jpg" />
+    <Content Include="assets\img\slideshow\slide3.jpg" />
     <Content Include="assets\img\social_icons\aim.png" />
     <Content Include="assets\img\social_icons\apple.png" />
     <Content Include="assets\img\social_icons\behance.png" />
@@ -426,7 +429,6 @@
     <Folder Include="assets\img\gridgallery\" />
     <Folder Include="assets\img\portfolio\" />
     <Folder Include="assets\img\profiles\" />
-    <Folder Include="assets\img\slideshow\" />
     <Folder Include="assets\img\theteam\" />
   </ItemGroup>
   <ItemGroup>
