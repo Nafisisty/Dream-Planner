@@ -24,6 +24,35 @@ namespace DreamPlanner_Main.Controllers
         {
             return View();
         }
+
+        public ActionResult Service()
+        {
+            return View();
+        }
+        public ActionResult Wedding()
+        {
+            return View();
+        }
+        public ActionResult Birthday()
+        {
+            return View();
+        }
+        public ActionResult Buddist()
+        {
+            return View();
+        }
+        public ActionResult Hindu()
+        {
+            return View();
+        }
+        public ActionResult Muslim()
+        {
+            return View();
+        }
+        public ActionResult Christian()
+        {
+            return View();
+        }
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

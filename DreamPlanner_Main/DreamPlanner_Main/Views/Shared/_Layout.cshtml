@@ -72,28 +72,28 @@
                                         <span>Services</span>
                                         <ul>
                                             <li>
-                                                <a href="#">Our Services</a>
+                                                @Html.ActionLink("Our Services", "Service", "Home")
                                             </li>
                                             <li>
-                                                <a href="#">Wedding</a>
+                                                @Html.ActionLink("Wedding", "Wedding", "Home")
                                             </li>
                                             <li>
-                                                <a href="#">Birthday</a>
+                                                @Html.ActionLink("Birthday", "Birthday", "Home")
                                             </li>
                                             <li class="parent">
                                                 <span>Community</span>
                                                 <ul>
                                                     <li>
-                                                        <a href="#">Muslim</a>
+                                                        @Html.ActionLink("Muslim", "Muslim", "Home")
                                                     </li>
                                                     <li>
-                                                        <a href="#">Buddist</a>
+                                                        @Html.ActionLink("Buddist", "Buddist", "Home")
                                                     </li>
                                                     <li>
-                                                        <a href="#">Hindu</a>
+                                                        @Html.ActionLink("Hindu", "Hindu", "Home")
                                                     </li>
                                                     <li>
-                                                        <a href="#">Christian</a>
+                                                        @Html.ActionLink("Christian", "Christian", "Home")
                                                     </li>
                                                 </ul>
                                             </li>
@@ -101,19 +101,19 @@
                                     </li>
 
                                     <li>
-                                        <a href="http://localhost:49855/Home/Gallery">Gallery</a>
+                                        @Html.ActionLink("Gallery", "Gallery", "Home")
                                     </li>
 
                                     <li>
-                                        @Html.ActionLink("About Us", "Index", "Home")
+                                        @Html.ActionLink("About Us", "About", "Home")
                                     </li>
 
                                     <li>
-                                        @Html.ActionLink("Contact", "Index", "Home")
+                                        @Html.ActionLink("Contact", "Contact", "Home")
                                     </li>
 
                                     <li>
-                                        <a href="#">Log In</a>
+                                        @Html.ActionLink("Log in", "Login", "Account")
                                     </li>
                                 </ul>
                             </div>
@@ -162,16 +162,16 @@
                     <div class="row">
                         <ul class="list-unstyled list-inline">
                             <li>
-                                <a href="#" target="_blank">Services</a>
+                                @Html.ActionLink("Services", "Service", "Home")
                             </li>
                             <li>
-                                @Html.ActionLink("Gallery", "Index", "Home")
+                                @Html.ActionLink("Gallery", "Gallery", "Home")
                             </li>
                             <li>
-                                @Html.ActionLink("About Us", "Index", "Home")
+                                @Html.ActionLink("About Us", "About", "Home")
                             </li>
                             <li>
-                                @Html.ActionLink("Contact", "Index", "Home")
+                                @Html.ActionLink("Contact", "Contact", "Home")
                             </li>
                         </ul>
                         <div class="clearfix"></div>

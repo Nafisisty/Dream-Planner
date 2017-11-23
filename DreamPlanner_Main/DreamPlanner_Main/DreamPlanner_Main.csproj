@@ -250,6 +250,7 @@
     <Content Include="assets\img\social_icons\youtube.png" />
     <Content Include="assets\img\social_icons\zerply.png" />
     <Content Include="assets\img\social_icons\zootool.png" />
+    <Content Include="assets\img\theteam\George.jpg" />
     <Content Include="assets\img\theteam\Nafis.jpg" />
     <Content Include="assets\js\bootstrap.min.js" />
     <Content Include="assets\js\jquery.isotope.js" />
@@ -424,6 +425,13 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Gallery.cshtml" />
+    <Content Include="Views\Home\Birthday.cshtml" />
+    <Content Include="Views\Home\Buddist.cshtml" />
+    <Content Include="Views\Home\Hindu.cshtml" />
+    <Content Include="Views\Home\Muslim.cshtml" />
+    <Content Include="Views\Home\Service.cshtml" />
+    <Content Include="Views\Home\Wedding.cshtml" />
+    <Content Include="Views\Home\Christian.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
