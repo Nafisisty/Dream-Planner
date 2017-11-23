@@ -5,70 +5,138 @@
 <br />
 <h2>@ViewBag.Title.</h2>
 
-<div style="margin-bottom:1%;">
-    <!-- Carousel Slideshow -->
-    <div id="carousel-example" class="carousel slide" data-ride="carousel">
-        <!-- Carousel Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example" data-slide-to="1"></li>
+<!-- Project-->
 
-        </ol>
-        <!-- End Carousel Indicators -->
-        <!-- Carousel Images -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <img src="~/assets/img/profiles/teamSlide1.jpg">
-            </div>
-            <div class="item">
-                <img src="~/assets/img/profiles/teamSlide2.jpg">
-            </div>
+<style type="text/css">
+    .progress {
+        height: 20px;
+        background: #bebac0;
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
+        border-radius: 10px;
+    }
 
+        .progress > span {
+            position: relative;
+            float: left;
+            margin: 0 -1px;
+            min-width: 30px;
+            height: 18px;
+            line-height: 16px;
+            text-align: right;
+            background: #3c3343;
+            border: 1px solid;
+            border-color: #bfbfbf #b3b3b3 #9e9e9e;
+            border-radius: 10px;
+            background-image: -webkit-linear-gradient(top, #f0f0f0 0%, #dbdbdb 70%, #cccccc 100%);
+            background-image: -moz-linear-gradient(top, #f0f0f0 0%, #dbdbdb 70%, #cccccc 100%);
+            background-image: -o-linear-gradient(top, #f0f0f0 0%, #dbdbdb 70%, #cccccc 100%);
+            background-image: linear-gradient(to bottom, #959199 0%, #131115 70%, #b3aaba 100%);
+            -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+            box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+            .progress > span > span {
+                padding: 0 8px;
+                font-size: 11px;
+                font-weight: bold;
+                color: #404040;
+                color: rgba(0, 0, 0, 0.7);
+                text-shadow: 0 1px rgba(255, 255, 255, 0.4);
+            }
+
+            .progress > span:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 1;
+                height: 18px;
+                background: 0 0 repeat-x;
+                border-radius: 10px;
+            }
+</style>
+
+<!--   Introduction of about us!    Introduction of about us!    Introduction of about us!    Introduction of about us!    Introduction of about us!   Introduction of about us!-->
+<div>
+    <div class="tab-content row" style="margin-left:0%; display:inline;float:left;width:50%;">
+        <p>
+            <!-- Introduction of about us-->
+            Our company was found in 2017 and totally 6 staff in our company. Our company focuses on planning various of parties.
+            For example, birthday party, wedding party, festival party and so on.The staff in our team all have undergone a professional training.
+            <br />
+            Although our company is small, but until now we bought surprises to over 3 countries, 14 cities and brought happiness to
+            over 10,000 people!
+            <br />
+            Blue swimming pool, delicious food, wonderful music, happy balloon, beautiful waiter... All these can be seen in our parties!
+            <strong>Your Dream, We Plan.</strong>
+            <br />
+            Contact us now! You will get a surprise!
+        </p>
+       
+ </div>
+
+    <div>
+        <!-- Picture slides   Picture slides   Picture slides   Picture slides   Picture slides  Picture slides  Picture slides   Picture slides  Picture slides  -->
+        <div style="display:inline; float:right; width:50%;">
+            <div style="margin-bottom:1%;">
+                <!-- Carousel Slideshow -->
+                <div id="carousel-example" class="carousel slide" data-ride="carousel">
+                    <!-- Carousel Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example" data-slide-to="1"></li>
+
+                    </ol>
+                    <!-- End Carousel Indicators -->
+                    <!-- Carousel Images -->
+                    <div class="carousel-inner" style="margin-top:2%;">
+                        <div class="item active">
+                            <img src="~/assets/img/theteam/slide1.jpg" style="width:100%;">
+                        </div>
+                        <div class="item">
+                            <img src="~/assets/img/theteam/slide2.jpg" style="width:100%;">
+                        </div>
+
+                    </div>
+                    <!-- End Carousel Images -->
+                    <!-- Carousel Controls -->
+                    <a class="left carousel-control" href="#carousel-example" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                    <!-- End Carousel Controls -->
+                </div>
+                <!-- End Carousel Slideshow -->
+            </div>
         </div>
-        <!-- End Carousel Images -->
-        <!-- Carousel Controls -->
-        <a class="left carousel-control" href="#carousel-example" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-        <a class="right carousel-control" href="#carousel-example" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-        <!-- End Carousel Controls -->
     </div>
-    <!-- End Carousel Slideshow -->
+    <hr />
 </div>
 
-<div class="tab-content row" style="margin-left:0%;">
-    <p>
-        <!-- Introduction of about us-->
-        Our company was found in 2017 and totally 6 staff in our company. Our company focuses on planning various of parties.
-        For example, birthday party, wedding party, festival party and so on.The staff in our team all have undergone a professional training.
-        <br />
-        Although our company is small, but until now we bought surprises to over 3 countries, 14 cities and brought happiness to
-        over 10,000 people!
-        <br />
-        Blue swimming pool, delicious food, wonderful music, happy balloon, beautiful waiter... All these can be seen in our parties!
-        <strong>Your Dream, We Plan.</strong>
-        <br />
-        Contact us now! You will get a surprise!
-    </p>
-    <h2>Vision</h2>
-    <div id="vision">
-        <p>
-            <strong>To be an industry leader , we must work hard every day and focus on tomorrow!</strong>
-            <br />
-            <b>  People:</b>Become a team of knowledgeable professionals to meet client, personal and corporate goals.<br />
-            <b>  Place:</b>Be a inspiring，harmonious and meaningful place  for people to share and contribute.<br />
-            <b>  Profit：</b>Maximize sustainable return to stakeholders.<br />
-            <b>  Professionalism：</b>What we do, we do well!
-        </p>
 
-
+    <!-- Vision      Vision        Vision         Vision           Vision          Vision         Vision           Vision            Vision-->
+    <div class="tab-content row" style="margin-left:0%; width:100%;">
+        <h2>Vision</h2>
+        <div id="vision">
+            <p>
+                <strong>To be an industry leader , we must work hard every day and focus on tomorrow!</strong>
+                <br />
+                <b>  People:</b>Become a team of knowledgeable professionals to meet client, personal and corporate goals.<br />
+                <b>  Place:</b>Be a inspiring，harmonious and meaningful place  for people to share and contribute.<br />
+                <b>  Profit：</b>Maximize sustainable return to stakeholders.<br />
+                <b>  Professionalism：</b>What we do, we do well!
+            </p>
+        </div>
     </div>
 
 
     <hr class="margin-vert-40">
-    <!-- Meet the Team -->
+    <!-- Meet the Team                    Meet the Team              Meet the Team             Meet the Team           Meet the Team             Meet the Team         Meet the Team -->
     <h2 class="margin-vert-20">Meet the Team</h2>
     <div class="row margin-bottom-30">
         <!-- Person Details -->
@@ -115,7 +183,7 @@
                         George
                         <small>- Scrum Master</small>
                     </h3>
-                    <span>Scrum Master of the team. <br />I know something about Scrum but actually not a master. Learing coding.</span>
+                    <span>Scrum Master of the team. <br />I know something about Scrum but actually not a master. Learning coding.</span>
                 </figcaption>
                 <ul class="list-inline person-details-icons">
                     <li>
@@ -141,6 +209,101 @@
                 </ul>
             </figure>
         </div>
+        <!-- //Portfolio Item// -->
+        <div class="col-sm-3 person-details">
+            <figure>
+                <img src="~/assets/img/theteam/Carrin.jpg" alt="Carin">
+                <figcaption>
+                    <h3>
+                        Carrin
+                        <small>- Document</small>
+                    </h3>
+                    <span>A member in the team. <br />I know something about HTML, CSS and PHP. And more things are learning during the process</span>
+                </figcaption>
+                <ul class="list-inline person-details-icons">
+                    <li>
+                        <a href="https://twitter.com/Carrin_Hjr">
+                            <i class="fa-lg fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/%E4%BD%B3%E6%9F%94-%E9%BB%84-797558153/">
+                            <i class="fa-lg fa-linkedin"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/profile.php?id=100021673963198">
+                            <i class="fa-lg fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://plus.google.com/u/0/108132099261562708973">
+                            <i class="fa-lg fa-google-plus"></i>
+                        </a>
+                    </li>
+                </ul>
+            </figure>
+        </div>
+
     </div>
     <hr class="margin-vert-60">
     <!-- End Meet the Team -->
+
+<!-- Our skills-->
+<div class="tab-content row" style="width:100%;">
+
+    <h2> Our Skills</h2>
+    <!-- Process bar-->
+    <div style="float:left; display:inline; width:50%;">
+        <section class="container">
+
+            <h3 class="progress-label">UI Design</h3>
+            <div class="progress">
+                <span style="width: 92%;"><span style="color:#eae5ed;">92%</span></span>
+            </div>
+
+            <h3 class="progress-label">Documentation</h3>
+            <div class="progress">
+                <span style="width: 82%;"><span style="color:#eae5ed;">82%</span></span>
+            </div>
+
+            <h3 class="progress-label">Database Design</h3>
+            <div class="progress">
+                <span style="width: 74%;"><span style="color:#eae5ed;">74%</span></span>
+            </div>
+
+            <h3 class="progress-label">Programming</h3>
+            <div class="progress">
+                <span style="width: 78%;"><span style="color:#eae5ed;">78%</span></span>
+            </div>
+
+            <h3 class="progress-label">Testing</h3>
+            <div class="progress">
+                <span style="width: 80%;"><span style="color:#eae5ed;">80%</span></span>
+            </div>
+
+            <h3 class="progress-label">Requirement analysis</h3>
+            <div class="progress">
+                <span style="width: 78%;"><span style="color:#eae5ed;">78%</span></span>
+            </div>
+        </section>
+    </div>
+
+    <!-- Test description-->
+    <div style="float:right; display:inline; width:50%; margin-top:2.2%;">
+        <p>
+            Commodo id natoque malesuada sollicitudin elit suscipit.
+            Curae suspendisse mauris posuere accumsan massa posuere lacus convallis tellus interdum.
+            Amet nullam fringilla nibh nulla convallis ut venenatis purus lobortis.
+            Auctor etiam porttitor phasellus tempus cubilia ultrices tempor sagittis.
+            Nisl fermentum consequat integer interdum integer purus sapien.
+            <br />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Praesent faucibus massa in mauris rhoncus aliquam.
+            Suspendisse nec velit vestibulum, euismod quam id, pellentesque elit. Ut a interdum metus, vel dictum nibh.
+            Sed fringilla sem sed massa ullamcorper, vitae rutrum justo sodales. Cras sed iaculis enim.
+            Sed aliquet viverra nisl a tristique. Curabitur vitae mauris sem.
+            Pellentesque iaculis nibh leo, mattis aliquet arcu tincidunt at.
+        </p>
+    </div>
+</div>
