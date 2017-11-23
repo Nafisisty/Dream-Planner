@@ -197,6 +197,16 @@
     <Content Include="assets\img\frontpage\responsive.png" />
     <Content Include="assets\img\frontpage\responsive_screens.png" />
     <Content Include="assets\img\menu_arrow.png" />
+    <Content Include="assets\img\portfolio\Img1.jpg" />
+    <Content Include="assets\img\portfolio\Img2.jpg" />
+    <Content Include="assets\img\portfolio\Img3.jpg" />
+    <Content Include="assets\img\portfolio\Img4.jpg" />
+    <Content Include="assets\img\portfolio\Img5.jpg" />
+    <Content Include="assets\img\portfolio\Img6.jpg" />
+    <Content Include="assets\img\portfolio\Img7.jpg" />
+    <Content Include="assets\img\portfolio\Img8.jpg" />
+    <Content Include="assets\img\profiles\teamSlide1.jpg" />
+    <Content Include="assets\img\profiles\teamSlide2.jpg" />
     <Content Include="assets\img\slideshow\slide1.jpg" />
     <Content Include="assets\img\slideshow\slide2.jpg" />
     <Content Include="assets\img\slideshow\slide3.jpg" />
@@ -250,8 +260,12 @@
     <Content Include="assets\img\social_icons\youtube.png" />
     <Content Include="assets\img\social_icons\zerply.png" />
     <Content Include="assets\img\social_icons\zootool.png" />
+    <Content Include="assets\img\theteam\Carrin.jpg" />
+    <Content Include="assets\img\theteam\Doria.jpg" />
     <Content Include="assets\img\theteam\George.jpg" />
     <Content Include="assets\img\theteam\Nafis.jpg" />
+    <Content Include="assets\img\theteam\slide1.jpg" />
+    <Content Include="assets\img\theteam\slide2.jpg" />
     <Content Include="assets\js\bootstrap.min.js" />
     <Content Include="assets\js\jquery.isotope.js" />
     <Content Include="assets\js\jquery.min.js" />
@@ -437,8 +451,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="assets\img\blog\thumbs\" />
     <Folder Include="assets\img\gridgallery\" />
-    <Folder Include="assets\img\portfolio\" />
-    <Folder Include="assets\img\profiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
