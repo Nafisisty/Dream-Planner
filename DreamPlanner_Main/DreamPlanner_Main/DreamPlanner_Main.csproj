@@ -250,6 +250,7 @@
     <Content Include="assets\img\social_icons\youtube.png" />
     <Content Include="assets\img\social_icons\zerply.png" />
     <Content Include="assets\img\social_icons\zootool.png" />
+    <Content Include="assets\img\theteam\Nafis.jpg" />
     <Content Include="assets\js\bootstrap.min.js" />
     <Content Include="assets\js\jquery.isotope.js" />
     <Content Include="assets\js\jquery.min.js" />
@@ -430,7 +431,6 @@
     <Folder Include="assets\img\gridgallery\" />
     <Folder Include="assets\img\portfolio\" />
     <Folder Include="assets\img\profiles\" />
-    <Folder Include="assets\img\theteam\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
