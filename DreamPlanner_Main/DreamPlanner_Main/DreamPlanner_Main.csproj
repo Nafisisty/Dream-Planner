@@ -194,8 +194,7 @@
     <Content Include="assets\img\frontpage\filler1.jpg" />
     <Content Include="assets\img\frontpage\filler2.jpg" />
     <Content Include="assets\img\frontpage\filler3.jpg" />
-    <Content Include="assets\img\frontpage\responsive.png" />
-    <Content Include="assets\img\frontpage\responsive_screens.png" />
+    <Content Include="assets\img\frontpage\AllReligionPhoto.jpg" />
     <Content Include="assets\img\menu_arrow.png" />
     <Content Include="assets\img\portfolio\Img1.jpg" />
     <Content Include="assets\img\portfolio\Img2.jpg" />
@@ -263,7 +262,9 @@
     <Content Include="assets\img\theteam\Carrin.jpg" />
     <Content Include="assets\img\theteam\Doria.jpg" />
     <Content Include="assets\img\theteam\George.jpg" />
+    <Content Include="assets\img\theteam\keerthy.JPG" />
     <Content Include="assets\img\theteam\Nafis.jpg" />
+    <Content Include="assets\img\theteam\Rohan.jpg" />
     <Content Include="assets\img\theteam\slide1.jpg" />
     <Content Include="assets\img\theteam\slide2.jpg" />
     <Content Include="assets\js\bootstrap.min.js" />
