@@ -2,8 +2,73 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container body-content">
-    <h2>Our Services</h2>
-    <h3>Your Service Page.</h3>
+<div class="container no-padding">
+    <div class="container">
+        <div class="row">
+            <!-- Service Introduction -->
+            <div class="col-md-12 margin-top-30 margin-bottom-30">
+                <h2 class="item-title">
+                    Our Services
+                </h2>
+                <div id="carousel-example" class="carousel slide" data-ride="carousel">
+                    <!-- Carousel Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example" data-slide-to="1"></li>
+                        <li data-target="#carousel-example" data-slide-to="2"></li>
+                    </ol>
+                    <!-- End Carousel Indicators -->
+                    <!-- Carousel Images -->
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img src="~/assets/img/service/wedding1.jpeg">
+                        </div>
+                        <div class="item">
+                            <img src="~/assets/img/service/birthday01.jpg">
+                        </div>
+                        <div class="item">
+                            <img src="~/assets/img/service/party1.jpg">
+                        </div>
+                    </div>
+                    <!-- End Carousel Images -->
+                    <!-- Carousel Controls -->
+                    <a class="left carousel-control" href="#carousel-example" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
+                    <!-- End Carousel Controls -->
+                </div>
+                <p class="intro">
+                    We Dream Planner offer the perfect service for any party and event. From your fantastic wedding, to your lovely birthday party, to your festival family party. We can host it all!
+                </p>
+                <div style="margin:2em;">
+                    <hr>
+                    <h2 class="service">
+                        Wedding
+                    </h2>
+                    <div>
+                        <img class="animate fadeInRight" style="float: right ; margin:1em ;" src="~/assets/img/service/wedding4.jpg" alt width="600" height="300">
+                        <p class="descri">
+                            We make sure that the space is perfect for you and your party.Contact us to set up a private tour of the facility. We would love to show you what we have to offer and how we can make your wedding day better than your wildest dreams!
+                            <ul style="list-style-type:none;margin:0;padding:0;">
+                                <li><span style="color:green;">&#x2714;</span> <b>Hall</b> </li>
+                                <li><span style="color:green;">&#x2714;</span> <b>Suit</b> </li>
+                                <li><span style="color:green;">&#x2714;</span> <b>Flower</b> </li>
+                                <li><span style="color:green;">&#x2714;</span> <b>Wine</b> </li>
+                                <li><span style="color:green;">&#x2714;</span> <b>Music</b> </li>
+                                <li><span style="color:green;">&#x2714;</span> <b>Cake</b> </li>
+                                <li style="float:right;">
+                                    @Html.ActionLink("Details->", "Wedding", "Home")
+                                </li>
 
-</div>
+                            </ul>
+                        </p>
+                    </div>
+
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
