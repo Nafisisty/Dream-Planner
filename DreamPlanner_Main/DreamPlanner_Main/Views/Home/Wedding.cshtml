@@ -2,50 +2,180 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<script type="text/javascript">
+    function play() {
+        document.getElementById("church").load();
+        document.getElementById("sea").load();
+        document.getElementById("church").play();
+        document.getElementById("sea").play();
+
+    }
+    function pause() {
+        ducument.getElementById("sea").pause();
+        ducument.getElementById("church").pause();
+    }
+</script>
+
 <div class="container body-content">
     <!-- Font picture of wedding page！            Font picture of wedding page！               Font picture of wedding page！                Font picture of wedding page！ ！-->
-    <img src="~/assets/img/wedding/fontPic2.jpg" style="margin-top:1%;" />
+    <img src="~/assets/img/wedding/front3.jpg" style="margin-top:1%;" />
 
     <hr />
 
     <!-- Detail for wedding      Detail for wedding             Detail for wedding                 Detail for wedding                      Detail for wedding-->
-    <!-- First row -->
+
     <div>
+
         <!-- The first one-->
-        <div style="width:48%; display:inline;float:left;">
-            <div style="width:40%;display:inline;float:left;">
+        <div style="width:100%; ">
+            <div style="width:70%;display:inline;float:left;">
                 <!-- Picture or vedio-->
-                <img src="~/assets/img/wedding/church wedding.jpg" />
+                <video poster="~assets/img/wedding/church wedding.jpg" style="width:100%;" id="church"
+                       src="~/assets/video/wedding/church wedding.mp4" onmousemove="play()" onmouseout="pause()" autoplay muted></video>
             </div>
-            <div style="width:60%;display:inline;float:right;">
+            <div style="width:30%;display:inline;float:right;">
+                <img src="~/assets/img/wedding/churchRight3.jpg" style="padding-left:2%; " />
+            </div>
+            <!-- Introduction -->
+            <div class="row" style="padding-top:40%;">
                 <p style="margin-left:2%;margin-top:1%;">
                     <!-- Description -->
                     <strong>Theme: Church Wedding</strong>
                 </p>
-                <p style="margin-left:2%;margin-top:-5%;">
+                <p style="margin-left:2%;margin-top:-2%;">
                     <!-- Description -->
-                    Introduction for Church Wedding.
+                    Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.
+                    Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.
+                    Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.
+                    Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.
+                    Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.
+                    Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.
+                    Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.
+                    Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.
+                    Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.
+                </p>
+            </div>
+        </div>
+        <hr />
+
+
+        <!-- The secord one-->
+        <div style="width:100%; margin-bottom:35%;">
+            <div style="width:40%;display:inline;float:left;">
+                <!-- Picture -->
+                <img src="~/assets/img/wedding/seaRigjt.jpg" style="width:100%;" />
+            </div>
+            <div style="width:58%;display:inline;float:right;">
+                <!-- Introcudtion for sea wedding 1-->
+                <p>
+                    <!-- Description -->
+                    <strong>Theme: Sea Wedding</strong>
+                </p>
+                <p style="margin-top:-2%;">
+                    <!-- Description -->
+                    Introduction 1 for sea wedding.Introduction 1 for sea wedding.Introduction 1 for sea wedding.
+                    Introduction 1 for sea wedding.Introduction 1 for sea wedding. Introduction 1 for sea wedding.
+                    Introduction 1 for sea wedding.Introduction 1 for sea wedding.Introduction 1 for sea wedding.Introduction 1 for sea wedding.
+                    Introduction 1 for sea wedding.Introduction 1 for sea wedding.Introduction 1 for sea wedding.Introduction 1 for sea wedding.
+                </p>
+            </div>
+        </div>
+        <div style="width:100%;">
+            <div style="width:42%;display:inline;float:left;">
+                <!-- Introduction 2 for sea wedding -->
+                <p>
+                    <!-- Description -->
+                    Introduction 2 for sea wedding.Introduction 2 for sea wedding.Introduction 2 for sea wedding.Introduction 2 for sea wedding.
+                    Introduction 2 for sea wedding.Introduction 2 for sea wedding.Introduction 2 for sea wedding.Introduction 2 for sea wedding.
+                    Introduction 2 for sea wedding.Introduction 2 for sea wedding.Introduction 2 for sea wedding.Introduction 2 for sea wedding.
+                </p>
+            </div>
+            <div style="width:55%;display:inline;float:right;">
+                <!-- Picture or vedio-->
+                <video poster="~assets/img/wedding/seaWedding.jpg" src="~/assets/video/wedding/sea wedding.mp4"
+                       style="width:100%;" id="sea" onmousemove="play()" onmouseout="pause()" autoplay muted></video>
+            </div>
+        </div>
+        <hr />
+
+
+        <!-- Third one-->
+        <div style="width:100%; margin-bottom:35%;">
+            <div style="width:42%;display:inline;float:left;">
+                <!-- Introcudtion for sea wedding 1-->
+                <p>
+                    <!-- Description -->
+                    <strong>Theme: Sea Wedding</strong>
+                </p>
+                <p style="margin-top:-2%;">
+                    <!-- Description -->
+                    Introduction 1 for sea wedding.Introduction 1 for sea wedding.Introduction 1 for sea wedding.
+                    Introduction 1 for sea wedding.Introduction 1 for sea wedding. Introduction 1 for sea wedding.
+                    Introduction 1 for sea wedding.Introduction 1 for sea wedding.Introduction 1 for sea wedding.Introduction 1 for sea wedding.
+                    Introduction 1 for sea wedding.Introduction 1 for sea wedding.Introduction 1 for sea wedding.Introduction 1 for sea wedding.
+                </p>
+            </div>
+            <div style="width:55%;display:inline;float:right;">
+                <!-- Picture -->
+                <video poster="~assets/img/wedding/seaWedding.jpg" src="~/assets/video/wedding/sea wedding.mp4"
+                       style="width:100%;" id="sea" onmousemove="play()" onmouseout="pause()" autoplay muted></video>
+            </div>
+        </div>
+        <div style="width:100%;">
+            <div style="width:40%;display:inline;float:left;">
+                <!-- Picture or vedio-->
+                <img src="~/assets/img/wedding/seaRigjt.jpg" style="width:100%;" />
+
+            </div>
+            <div style="width:58%;display:inline;float:right;">
+                <!-- Introduction 2 for sea wedding -->
+                <p>
+                    <!-- Description -->
+                    Introduction 2 for sea wedding.Introduction 2 for sea wedding.Introduction 2 for sea wedding.Introduction 2 for sea wedding.
+                    Introduction 2 for sea wedding.Introduction 2 for sea wedding.Introduction 2 for sea wedding.Introduction 2 for sea wedding.
+                    Introduction 2 for sea wedding.Introduction 2 for sea wedding.Introduction 2 for sea wedding.Introduction 2 for sea wedding.
                 </p>
             </div>
         </div>
 
-        <!-- The secord one-->
-        <div style="width:48%;display:inline;float:left; margin-left:-4%;">
-            <div style="width:60%;display:inline;float:left;">
+        <hr />
+
+
+        <!-- Forth one-->
+        <div style="width:100%; ">
+            <!-- Introduction -->
+            <div class="row">
                 <p style="margin-left:2%;margin-top:1%;">
                     <!-- Description -->
                     <strong>Theme: Church Wedding</strong>
                 </p>
-                <p style="margin-left:2%;margin-top:-5%;">
+                <p style="margin-left:2%;margin-top:-2%;">
                     <!-- Description -->
-                    Introduction for Church Wedding.
+                    Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.
+                    Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.
+                    Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.
+                    Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.
+                    Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.
+                    Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.
+                    Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.
+                    Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.
+                    Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.Introduction for Church Wedding.
                 </p>
             </div>
-            <div style="width:40%;display:inline;float:right;">
-                <img src="~/assets/img/wedding/church wedding.jpg" />
+            <div style="width:70%;display:inline;float:right;">
+                <!-- Picture or vedio-->
+                <video poster="~assets/img/wedding/church wedding.jpg" style="width:100%;" id="church"
+                       src="~/assets/video/wedding/church wedding.mp4" onmousemove="play()" onmouseout="pause()" autoplay muted></video>
+            </div>
+            <div style="width:30%;display:inline;float:left;">
+                <img src="~/assets/img/wedding/churchRight3.jpg" style="padding-right:2%; " />
             </div>
         </div>
+        <hr />
+
     </div>
 
 
 </div>
+
+
