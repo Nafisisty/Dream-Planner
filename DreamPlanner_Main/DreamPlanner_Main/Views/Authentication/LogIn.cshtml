@@ -1,0 +1,58 @@
+﻿@using DreamPlanner_Main.Models.UserDefinedModels
+
+@model LogInModel
+@{
+    ViewBag.Title = "LogIn";
+}
+<div class="container">
+    <div class="container">
+        <div class="row margin-vert-30">
+            <div class="col-md-6 col-md-offset-3 col-sm-offset-3">
+                @using (Html.BeginForm("Login", "Authentication", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "login-page", role = "form" }))
+            {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="login-header margin-bottom-30">
+                        <h2>Login to your account</h2>
+                    </div>
+                        <div class="input-group margin-bottom-20">
+                            <span class="input-group-addon">
+                                <i class="fa fa-user"></i>
+                            </span>
+                            @Html.EditorFor(m => m.UserName, new { htmlAttributes = new { @class = "form-control", placeholder = "User Name" } })
+                            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="input-group margin-bottom-20">
+                            <span class="input-group-addon">
+                                <i class="fa fa-lock"></i>
+                            </span>
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-primary pull-right" type="submit">Login</button>
+                            </div>
+                        </div>
+                        <hr>
+
+                    <p>
+                        @Html.ActionLink("Register as a new user", "Create", "Users")
+                    </p>
+                    @* Enable this once you have account confirmation enabled for password reset functionality
+            <p>
+                @Html.ActionLink("Forgot your password?", "ForgotPassword")
+            </p>*@
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
