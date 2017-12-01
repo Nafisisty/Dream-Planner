@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace DreamPlanner_Main.Models.UserDefinedModels
+{
+    public class City
+    {
+        public int CityId { get; set; }
+        public string CityName { get; set; }
+
+        public int CountryId { get; set; }
+        public Country Country { get; set; }
+
+        public List<User> Users { get; set; }
+    }
+}
