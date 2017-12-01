@@ -553,3 +553,5 @@ C:\Users\Isty\Desktop\Applied Software Management\Dream-Planner\DreamPlanner_Mai
 C:\Users\Isty\Desktop\Applied Software Management\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.csproj.GenerateResource.Cache
 C:\Users\小仙女\Desktop\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.Migrations.Version_1.resources
 C:\Users\小仙女\Desktop\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.csproj.GenerateResource.Cache
+D:\Csharp\PA2515\RealProject\Dream-Planner-Group2\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.Migrations.Version_1.resources
+D:\Csharp\PA2515\RealProject\Dream-Planner-Group2\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.csproj.GenerateResource.Cache

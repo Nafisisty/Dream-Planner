@@ -4,17 +4,42 @@
 
 <script type="text/javascript">
     function play() {
-        document.getElementById("church").load();
-        document.getElementById("sea").load();
-        document.getElementById("church").play();
-        document.getElementById("sea").play();
+        document.getElementById("beautiful").load();
+        document.getElementById("simple").load();
+        document.getElementById("romantic").load();
+        document.getElementById("chinese").load();
 
+        document.getElementById("beautiful").play();
+        document.getElementById("simple").play();
+        document.getElementById("romantic").play();
+        document.getElementById("chinese").play();
     }
     function pause() {
-        ducument.getElementById("sea").pause();
-        ducument.getElementById("church").pause();
+        ducument.getElementById("simple").pause();
+        ducument.getElementById("beautiful").pause();
+        ducument.getElementById("romantic").pause();
+        ducument.getElementById("chinese").pause();
     }
 </script>
+
+<style type="text/css">
+    strong {
+        font-family: "palatino linotype", palatino, serif;
+        color: #E08080;
+        text-decoration: underline;
+        font-variant: small-caps;
+        letter-spacing: 0.8pt;
+        word-spacing: -1pt;
+        line-height: 0.6;
+    }
+
+    p {
+        font-family: helvetica, sans-serif;
+        word-spacing: 1.2pt;
+        line-height: 1.4;
+        font-size: 1.1em;
+    }
+</style>
 
 <div class="container body-content">
     <!-- Font picture of wedding page！            Font picture of wedding page！               Font picture of wedding page！                Font picture of wedding page！ ！-->
@@ -30,7 +55,7 @@
         <div style="width:100%; ">
             <div style="width:70%;display:inline;float:left;">
                 <!-- Picture or vedio-->
-                <video poster="~assets/img/wedding/beautiful dream style.jpg" style="width:100%;" id="church"
+                <video poster="~assets/img/wedding/beautiful dream style.jpg" style="width:100%;" id="beautiful"
                        src="~/assets/video/wedding/beautiful dream style.mp4" onmousemove="play()" onmouseout="pause()" autoplay muted></video>
             </div>
             <div style="width:30%;display:inline;float:right;">
@@ -87,7 +112,7 @@
             <div style="width:55%;display:inline;float:right;">
                 <!-- Picture or vedio-->
                 <video poster="~assets/img/wedding/simple fresh style.jpg" src="~/assets/video/wedding/simple fresh style.mp4"
-                       style="width:100%;" id="sea" onmousemove="play()" onmouseout="pause()" autoplay muted></video>
+                       style="width:100%;" id="simple" onmousemove="play()" onmouseout="pause()" autoplay muted></video>
             </div>
         </div>
         <hr />
@@ -109,7 +134,7 @@
             <div style="width:55%;display:inline;float:right;">
                 <!-- Picture -->
                 <video poster="~assets/img/wedding/luxurious and romantic style.jpg" src="~/assets/video/wedding/luxurious and romantic style.mp4"
-                       style="width:100%;" id="sea" onmousemove="play()" onmouseout="pause()" autoplay muted></video>
+                       style="width:100%;" id="romantic" onmousemove="play()" onmouseout="pause()" autoplay muted></video>
             </div>
         </div>
         <div style="width:100%;">
@@ -124,7 +149,7 @@
                     <!-- Description -->
                     <br />No girl in the world is estimated to be impressed by a delicate romantic fairytale wedding. Wearing a beautiful dress, waiting for prince riding a white horse to pick up their own, and then like the fairy tale written inside - "Since then, they have a happy life," all this is how beautiful. Although ordinary people cannot be extravagant to wear a diamond-studded trailing wedding dress, sitting cinderella to see the prince's pumpkin carriage to go to the castle to get married, but as long as more thoughtful, you can create your own luxury wedding.
                     <br />Give your wedding to us! Whether you're rich or not, whatever romance you want, we'll try our best to help you make a romantic wedding!
-                     
+
             </div>
         </div>
 
@@ -148,7 +173,7 @@
             </div>
             <div style="width:70%;display:inline;float:right;">
                 <!-- Picture or vedio-->
-                <video poster="~assets/img/wedding//retro chinese style.jpg" style="width:100%;" id="church"
+                <video poster="~assets/img/wedding//retro chinese style.jpg" style="width:100%;" id="chinese"
                        src="~/assets/video/wedding//retro chinese style.mp4" onmousemove="play()" onmouseout="pause()" autoplay muted></video>
             </div>
             <div style="width:30%;display:inline;float:left;">
@@ -160,6 +185,6 @@
     </div>
 
 
+    <audio src="~/assets/audio/Stuck Like Glue.mp3" autoplay></audio>
 </div>
-
 
