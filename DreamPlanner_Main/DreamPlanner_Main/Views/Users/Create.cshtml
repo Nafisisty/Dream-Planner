@@ -1,0 +1,113 @@
+﻿@model DreamPlanner_Main.Models.UserDefinedModels.User
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="container">
+    <div class="row margin-vert-30">
+        <div class="col-md-6 col-md-offset-3 col-sm-offset-3">
+            @using (Html.BeginForm("Create", "Users", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "signup-page", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="signup-header">
+                    <h2>Register a new account</h2>
+                    <p>
+                        Already a member? Click
+                        @Html.ActionLink("HERE", "LogIn", "Authentication", routeValues: null, htmlAttributes : new { @class = "color-green" } ) to login to your account.
+                    </p>
+                </div>
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                @Html.LabelFor(model => model.FirstName)
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control margin-bottom-20" } })
+                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+
+                @Html.LabelFor(model => model.LastName)
+                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control margin-bottom-20" } })
+                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+
+                @Html.LabelFor(model => model.UserEmail)
+                @Html.EditorFor(model => model.UserEmail, new { htmlAttributes = new { @class = "form-control margin-bottom-20" } })
+                @Html.ValidationMessageFor(model => model.UserEmail, "", new { @class = "text-danger" })
+
+                @Html.LabelFor(model => model.City.CountryId)
+                @Html.DropDownList("CountryId", null, htmlAttributes: new { @class = "form-control margin-bottom-20" })
+                @Html.ValidationMessageFor(model => model.City.CountryId, "", new { @class = "text-danger" })
+
+                @Html.LabelFor(model => model.CityId)
+                @Html.DropDownList("CityId", null, htmlAttributes: new { @class = "form-control margin-bottom-20" })
+                @Html.ValidationMessageFor(model => model.CityId, "", new { @class = "text-danger" })
+
+                @Html.LabelFor(model => model.UserStreetAddress)
+                @Html.EditorFor(model => model.UserStreetAddress, new { htmlAttributes = new { @class = "form-control margin-bottom-20" } })
+                @Html.ValidationMessageFor(model => model.UserStreetAddress, "", new { @class = "text-danger" })
+
+                @Html.LabelFor(model => model.UserName)
+                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control margin-bottom-20" } })
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+
+                <div class="row">
+                    <div class="col-sm-6">
+
+                        @Html.LabelFor(model => model.UserPassword)
+                        @Html.PasswordFor(model => model.UserPassword, new { @class = "form-control margin-bottom-20" })
+                        @Html.ValidationMessageFor(model => model.UserPassword, "", new { @class = "text-danger" })
+
+                    </div>
+                    <div class="col-sm-6">
+                        <label>
+                            Confirm Password
+                        </label>
+                        <input class="form-control margin-bottom-20" type="password">
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="row">
+                    <div class="col-lg-8">
+                    </div>
+                    <div class="col-lg-4 text-right">
+                        <button class="btn btn-primary" type="submit">Register</button>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+    </div>
+
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+<script>
+        $(document).ready(function() {
+
+            $("#CountryId").change(function() {
+                var cntryId = $("#CountryId").val();
+                $("#CityId").empty();
+                var json = { countryId: cntryId };
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("GetCityByCountry", "Users")',
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(json),
+                    success: function(data) {
+                        //$("#CityId").append('<option value=>Select...</option>');
+                        $.each(data, function(key, value) {
+                            $("#CityId").append('<option value=' + value.CityId + '>' + value.CityName + '</option>');
+                        });
+                    }
+                });
+            });
+        });
+</script>
+
+}
