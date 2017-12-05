@@ -1,4 +1,5 @@
 ﻿using DreamPlanner_Main.Models.UserDefinedModels;
+using DreamPlanner_Main.Models.UserDefineModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -14,5 +15,7 @@ namespace DreamPlanner_Main.Models
         public DbSet<User> Users { get; set; }
 
         public DbSet<City> Cities { get; set; }
+
+        public DbSet<Contact> Contact { get; set; }
     }
 }

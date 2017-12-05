@@ -179,6 +179,14 @@
     <Compile Include="Migrations\201712011446246_Version_1.Designer.cs">
       <DependentUpon>201712011446246_Version_1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712051335488_Version_2.cs" />
+    <Compile Include="Migrations\201712051335488_Version_2.Designer.cs">
+      <DependentUpon>201712051335488_Version_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712051410407_Version_3.cs" />
+    <Compile Include="Migrations\201712051410407_Version_3.Designer.cs">
+      <DependentUpon>201712051410407_Version_3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -186,6 +194,7 @@
     <Compile Include="Models\ProjectDbContext.cs" />
     <Compile Include="Models\UserDefineModels\Authentication.cs" />
     <Compile Include="Models\UserDefineModels\City.cs" />
+    <Compile Include="Models\UserDefineModels\Contact.cs" />
     <Compile Include="Models\UserDefineModels\Country.cs" />
     <Compile Include="Models\UserDefineModels\LogInModel.cs" />
     <Compile Include="Models\UserDefineModels\User.cs" />
@@ -496,6 +505,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201712011446246_Version_1.resx">
       <DependentUpon>201712011446246_Version_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712051335488_Version_2.resx">
+      <DependentUpon>201712051335488_Version_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712051410407_Version_3.resx">
+      <DependentUpon>201712051410407_Version_3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

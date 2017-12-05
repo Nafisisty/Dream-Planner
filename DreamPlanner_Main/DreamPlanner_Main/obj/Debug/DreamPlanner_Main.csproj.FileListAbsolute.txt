@@ -628,3 +628,5 @@ D:\Csharp\PA2515\RealProject\Dream-Planner-Group2\Dream-Planner\DreamPlanner_Mai
 D:\Csharp\PA2515\RealProject\Dream-Planner-Group2\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.dll
 D:\Csharp\PA2515\RealProject\Dream-Planner-Group2\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.pdb
 D:\Csharp\PA2515\RealProject\Dream-Planner-Group2\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.csprojResolveAssemblyReference.cache
+D:\Csharp\PA2515\RealProject\Dream-Planner-Group2\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.Migrations.Version_2.resources
+D:\Csharp\PA2515\RealProject\Dream-Planner-Group2\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.Migrations.Version_3.resources
