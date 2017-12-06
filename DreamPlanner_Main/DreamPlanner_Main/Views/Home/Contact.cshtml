@@ -1,1 +1,87 @@
-﻿
+﻿@{
+    ViewBag.Title = "Contact Form";
+}
+<h2>@*@ViewBag.Title*@</h2>
+@*<h3>@ViewBag.Message</h3>*@
+
+<style type="text/css">
+    .formFont {
+        font-family: "palatino linotype", palatino, serif;
+        font-size: 12px;
+        letter-spacing: 0.6pt;
+        word-spacing: -1.2pt;
+    }
+
+    .formButton {
+        line-height: 35px;
+        height: 35px;
+        width: 97px;
+        color: #000000;
+        background-color: #ededed;
+        font-size: 14px;
+        font-weight: normal;
+        font-family: Caslon;
+        background: -webkit-gradient(linear, left top, left bottom, color-start(0.05, #b5afaf), color-stop(1, #fafafa));
+        background: -moz-linear-gradient(top, #b5afaf 5%, #fafafa 100%);
+        background: -o-linear-gradient(top, #b5afaf 5%, #fafafa 100%);
+        background: -ms-linear-gradient(top, #b5afaf 5%, #fafafa 100%);
+        background: linear-gradient(to bottom, #b5afaf 5%, #fafafa 100%);
+        background: -webkit-linear-gradient(top, #b5afaf 5%, #fafafa 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b5afaf', endColorstr='#fafafa',GradientType=0);
+        border: 0px solid #dcdcdc;
+        -webkit-border-top-left-radius: 19px;
+        -moz-border-radius-topleft: 19px;
+        border-top-left-radius: 19px;
+        -webkit-border-top-right-radius: 19px;
+        -moz-border-radius-topright: 19px;
+        border-top-right-radius: 19px;
+        -webkit-border-bottom-left-radius: 19px;
+        -moz-border-radius-bottomleft: 19px;
+        border-bottom-left-radius: 19px;
+        -webkit-border-bottom-right-radius: 19px;
+        -moz-border-radius-bottomright: 19px;
+        border-bottom-right-radius: 19px;
+        -moz-box-shadow: inset 0px 0px 0px 0px #ffffff;
+        -webkit-box-shadow: inset 0px 0px 0px 0px #ffffff;
+        box-shadow: inset 0px 0px 0px 0px #ffffff;
+        text-align: center;
+        display: inline-block;
+        text-decoration: none;
+    }
+
+        .formButton:hover {
+            background-color: #f5f5f5;
+            background: -webkit-gradient(linear, left top, left bottom, color-start(0.05, #fafafa), color-stop(1, #b5afaf));
+            background: -moz-linear-gradient(top, #fafafa 5%, #b5afaf 100%);
+            background: -o-linear-gradient(top, #fafafa 5%, #b5afaf 100%);
+            background: -ms-linear-gradient(top, #fafafa 5%, #b5afaf 100%);
+            background: linear-gradient(to bottom, #fafafa 5%, #b5afaf 100%);
+            background: -webkit-linear-gradient(top, #fafafa 5%, #b5afaf 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#b5afaf',GradientType=0);
+        }
+</style>
+
+<div style="width:100%;">
+    <div style="float:left;display:inline; width:70%;margin-left:1.5%;">
+        <h2>Contact Form</h2>
+        <form action="" method="post" class="formFont">
+            Username:<br /><input type="text" id="username" placeholder="Please input your username" style="margin-bottom:3%;width:35%;" /><br />
+            E-mail:  <br /><input type="text" id="email" placeholder="Please input your email address" style="margin-bottom:3%;width:35%;" /><br />
+            Message: <br /><textarea id="message" placeholder="Welcome to leave your suggestion" style="margin-bottom:3%;width:75%;height:160px;"></textarea><br />
+            <input type="submit" id="submitMessage" name="Submit" class="formButton" style="margin-bottom:3%;" />
+        </form>
+    </div>
+
+    <div style="float:right;display:inline; width:28%;">
+        <div style="background-color:#99938c6e;width:100%;height:auto; padding-top:5%; padding-left:5%; padding-right:5%; padding-bottom:5%; border-radius:10%; margin-top:3%;">
+            <label style="font-size:2em;">Contact Us</label><br />
+            Welcome to our store to know our company and our products.
+            If you have no time to come, welcome to write the contact form, we will answer you as soon as possible.<br />
+            <strong>Open Time:</strong>  Mon. to Fri. 8:00am to 5:00pm<br />
+            <strong>Store Address:</strong> Norra Smedjegatan 59 (ingång från gården), 37133 Karlskrona, Sweden
+            <strong>Contact:</strong> Nafis<br />
+            <strong>Info Email:</strong> nafisisty@gmail.com <br />
+
+        </div>
+    </div>
+</div>
