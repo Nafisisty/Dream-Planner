@@ -16,5 +16,7 @@ namespace DreamPlanner_Main.Models
         public DbSet<City> Cities { get; set; }
 
         public DbSet<Hall> Halls { get; set; }
+
+        public DbSet<Reservation> Reservations { get; set; }
     }
 }
