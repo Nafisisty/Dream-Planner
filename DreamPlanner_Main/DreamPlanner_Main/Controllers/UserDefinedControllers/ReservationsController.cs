@@ -41,7 +41,8 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
         public ActionResult Create()
         {
             ViewBag.HallId = new SelectList(db.Halls, "HallId", "HallName");
-            ViewBag.ThemeId = new SelectList(db.Themes, "ThemeId", "ThemeName");
+            ViewBag.PartyTypeId = new SelectList(db.PartyTypes, "PartyTypeId", "PartyTypeName");
+            ViewBag.ThemeId = new SelectList(db.Themes.Where(t => t.PartyTypeId == 1).ToList(), "ThemeId", "ThemeName");
             ViewBag.UserId = new SelectList(db.Users, "UserId", "FirstName");
             return View();
         }
@@ -127,6 +128,12 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
             db.Reservations.Remove(reservation);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public JsonResult GetThemeByPartyType(int partyTypeId)
+        {
+            var themeList = db.Themes.Where(t => t.PartyTypeId == partyTypeId).ToList();
+            return Json(themeList, JsonRequestBehavior.AllowGet);
         }
 
         protected override void Dispose(bool disposing)

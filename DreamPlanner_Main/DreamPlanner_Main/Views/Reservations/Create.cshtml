@@ -17,6 +17,9 @@
 
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
+                @Html.LabelFor(model => model.Theme.PartyTypeId)
+                @Html.DropDownList("PartyTypeId", null, htmlAttributes: new { @class = "form-control margin-bottom-20" })
+                @Html.ValidationMessageFor(model => model.Theme.PartyTypeId, "", new { @class = "text-danger" })
 
                 @Html.LabelFor(model => model.ThemeId)
                 @Html.DropDownList("ThemeId", null, htmlAttributes: new { @class = "form-control margin-bottom-20" })
@@ -53,4 +56,28 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+<script>
+        $(document).ready(function() {
+
+            $("#PartyTypeId").change(function () {
+                var prtpId = $("#PartyTypeId").val();
+                $("#ThemeId").empty();
+                var json = { partyTypeId: prtpId };
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("GetThemeByPartyType", "Reservations")',
+                    contentType: "application/json; charset=utf-8",
+                    data: JSON.stringify(json),
+                    success: function(data) {
+                        //$("#CityId").append('<option value=>Select...</option>');
+                        $.each(data, function(key, value) {
+                            $("#ThemeId").append('<option value=' + value.ThemeId + '>' + value.ThemeName + '</option>');
+                        });
+                    }
+                });
+            });
+        });
+</script>
+
 }
