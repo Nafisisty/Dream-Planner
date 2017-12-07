@@ -171,13 +171,16 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\UserDefinedControllers\AuthenticationController.cs" />
+    <Compile Include="Controllers\UserDefinedControllers\CitiesController.cs" />
+    <Compile Include="Controllers\UserDefinedControllers\CountriesController.cs" />
+    <Compile Include="Controllers\UserDefinedControllers\ReservationsController.cs" />
     <Compile Include="Controllers\UserDefinedControllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712061151102_Version_1.cs" />
-    <Compile Include="Migrations\201712061151102_Version_1.Designer.cs">
-      <DependentUpon>201712061151102_Version_1.cs</DependentUpon>
+    <Compile Include="Migrations\201712071248500_Version_1.cs" />
+    <Compile Include="Migrations\201712071248500_Version_1.Designer.cs">
+      <DependentUpon>201712071248500_Version_1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -486,6 +489,21 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Reservations\Create.cshtml" />
+    <Content Include="Views\Reservations\Delete.cshtml" />
+    <Content Include="Views\Reservations\Details.cshtml" />
+    <Content Include="Views\Reservations\Edit.cshtml" />
+    <Content Include="Views\Reservations\Index.cshtml" />
+    <Content Include="Views\Countries\Create.cshtml" />
+    <Content Include="Views\Countries\Delete.cshtml" />
+    <Content Include="Views\Countries\Details.cshtml" />
+    <Content Include="Views\Countries\Edit.cshtml" />
+    <Content Include="Views\Countries\Index.cshtml" />
+    <Content Include="Views\Cities\Create.cshtml" />
+    <Content Include="Views\Cities\Delete.cshtml" />
+    <Content Include="Views\Cities\Details.cshtml" />
+    <Content Include="Views\Cities\Edit.cshtml" />
+    <Content Include="Views\Cities\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -501,8 +519,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712061151102_Version_1.resx">
-      <DependentUpon>201712061151102_Version_1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712071248500_Version_1.resx">
+      <DependentUpon>201712071248500_Version_1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

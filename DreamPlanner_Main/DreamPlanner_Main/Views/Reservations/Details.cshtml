@@ -1,0 +1,50 @@
+﻿@model DreamPlanner_Main.Models.UserDefinedModels.Reservation
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Reservation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Hall.HallName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hall.HallName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Theme.ThemeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Theme.ThemeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReservationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReservationDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ReservationId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

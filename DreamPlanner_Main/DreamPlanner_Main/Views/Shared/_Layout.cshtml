@@ -113,14 +113,13 @@
                                     </li>
 
                                     <li>
-                                        @if (Authentication.UserStatus)
+                                        @if (Authentication.IsAuthenticated)
                                         {
-                                            @Html.ActionLink("Log out", "LogOff", "Authentication")
-
+                                            @Html.ActionLink("Log Out", "LogOff", "Authentication")
                                         }
                                         else
                                         {
-                                        @Html.ActionLink("Log in", "LogIn", "Authentication")
+                                        @Html.ActionLink("Log In", "LogIn", "Authentication")
                                         }
                                     </li>
                                 </ul>

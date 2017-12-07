@@ -1,19 +1,20 @@
 namespace DreamPlanner_Main.Migrations
 {
+    using Models;
     using Models.UserDefinedModels;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<DreamPlanner_Main.Models.ProjectDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ProjectDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(DreamPlanner_Main.Models.ProjectDbContext context)
+        protected override void Seed(ProjectDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
@@ -35,6 +36,22 @@ namespace DreamPlanner_Main.Migrations
                 new Country { CountryName = "India"},
                 new Country { CountryName = "Pakistan"}
                 );
+
+            context.Halls.AddOrUpdate(
+                new Hall { HallName = "Small", HallCapacity = 50 },
+                new Hall { HallName = "Medium", HallCapacity = 100 },
+                new Hall { HallName = "Large", HallCapacity = 200 }
+                );
+
+            context.PartyTypes.AddOrUpdate(
+                new PartyType { PartyTypeName = "Wedding" },
+                new PartyType { PartyTypeName = "Birthday" },
+                new PartyType { PartyTypeName = "Muslim Community" },
+                new PartyType { PartyTypeName = "Hindu Community" },
+                new PartyType { PartyTypeName = "Buddhist Community" },
+                new PartyType { PartyTypeName = "Christian Community" }
+                );
+
         }
     }
 }

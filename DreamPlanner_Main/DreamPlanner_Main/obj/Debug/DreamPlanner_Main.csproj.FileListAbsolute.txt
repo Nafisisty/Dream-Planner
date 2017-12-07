@@ -480,8 +480,6 @@ C:\Users\keerthy\Desktop\New folder (4)\DreamPlanner_Main\DreamPlanner_Main\bin\
 C:\Users\keerthy\Desktop\New folder (4)\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.csprojResolveAssemblyReference.cache
 C:\Users\keerthy\Desktop\New folder (4)\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.dll
 C:\Users\keerthy\Desktop\New folder (4)\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.pdb
-C:\Users\Isty\Desktop\Applied Software Management\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.Migrations.Version_1.resources
-C:\Users\Isty\Desktop\Applied Software Management\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.csproj.GenerateResource.Cache
 C:\Users\小仙女\Desktop\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.Migrations.Version_1.resources
 C:\Users\小仙女\Desktop\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.csproj.GenerateResource.Cache
 C:\Users\keerthy\Desktop\dd\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\bin\roslyn\csc.exe
@@ -630,3 +628,5 @@ D:\Csharp\PA2515\RealProject\Dream-Planner-Group2\Dream-Planner\DreamPlanner_Mai
 D:\Csharp\PA2515\RealProject\Dream-Planner-Group2\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.Migrations.Version_3.resources
 F:\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.Migrations.Version_1.resources
 F:\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.csproj.GenerateResource.Cache
+C:\Users\Isty\Desktop\Applied Software Management\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.Migrations.Version_1.resources
+C:\Users\Isty\Desktop\Applied Software Management\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.csproj.GenerateResource.Cache

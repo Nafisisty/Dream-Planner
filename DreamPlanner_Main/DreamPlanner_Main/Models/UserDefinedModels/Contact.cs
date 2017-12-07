@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace DreamPlanner_Main.Models.UserDefineModels
+namespace DreamPlanner_Main.Models.UserDefinedModels
 {
     public class Contact
     {

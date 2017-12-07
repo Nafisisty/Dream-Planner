@@ -15,8 +15,15 @@ namespace DreamPlanner_Main.Models
 
         public DbSet<City> Cities { get; set; }
 
+        public DbSet<Contact> Contacts { get; set; }
+
         public DbSet<Hall> Halls { get; set; }
 
         public DbSet<Reservation> Reservations { get; set; }
+
+        public DbSet<PartyType> PartyTypes { get; set; }
+
+        public DbSet<Theme> Themes { get; set; }
+
     }
 }
