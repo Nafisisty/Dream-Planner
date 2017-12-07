@@ -1,4 +1,4 @@
-﻿
+﻿@using DreamPlanner_Main.Models.UserDefinedModels
 <!-- === BEGIN HEADER === -->
 <!DOCTYPE html>
 <html lang="en">
@@ -113,7 +113,15 @@
                                     </li>
 
                                     <li>
+                                        @if (Authentication.UserStatus)
+                                        {
+                                            @Html.ActionLink("Log out", "LogOff", "Authentication")
+
+                                        }
+                                        else
+                                        {
                                         @Html.ActionLink("Log in", "LogIn", "Authentication")
+                                        }
                                     </li>
                                 </ul>
                             </div>
