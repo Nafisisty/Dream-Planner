@@ -50,9 +50,9 @@ namespace DreamPlanner_Main.Migrations
                 c => new
                     {
                         ContactId = c.Int(nullable: false, identity: true),
-                        UserName = c.String(nullable: false),
-                        Email = c.String(nullable: false),
-                        Message = c.String(nullable: false),
+                        UserName = c.String(),
+                        Email = c.String(),
+                        Message = c.String(),
                         ContactOrNot = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ContactId);

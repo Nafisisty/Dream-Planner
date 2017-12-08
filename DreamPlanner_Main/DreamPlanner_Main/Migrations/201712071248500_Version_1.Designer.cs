@@ -13,7 +13,7 @@ namespace DreamPlanner_Main.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201712081523049_Version_1"; }
+            get { return "201712071248500_Version_1"; }
         }
         
         string IMigrationMetadata.Source
