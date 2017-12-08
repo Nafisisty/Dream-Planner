@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DreamPlanner_Main.Models;
+using DreamPlanner_Main.Models.UserDefinedModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +10,8 @@ namespace DreamPlanner_Main.Controllers
 {
     public class HomeController : Controller
     {
+        private ProjectDbContext db = new ProjectDbContext();
+
         public ActionResult Index()
         {
             return View();
@@ -53,11 +57,40 @@ namespace DreamPlanner_Main.Controllers
         {
             return View();
         }
+
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
+
+        [HttpPost]
+
+        public ActionResult Contact(Contact contact)
+        {
+            ViewBag.ContactResult = " ";
+            if (ModelState.IsValid)
+            {
+                //Insert into database
+                db.Contacts.Add(contact);
+
+                if (db.SaveChanges() > 0)
+                {
+                    ViewBag.ContactResult = "Thank your for your message!";
+                    return View();
+                }
+                else
+                {
+                    ViewBag.ContactResult = "Sorry,something wrong happened, please try it next time...";
+                    return View();
+                }
+            }
+            else
+            {
+                ViewBag.ContactResult = "Sorry, please check your message";
+                return View();
+            }
+        }
     }
+
 }
+      
