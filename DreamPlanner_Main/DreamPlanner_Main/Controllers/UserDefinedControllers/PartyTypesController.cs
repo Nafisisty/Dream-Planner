@@ -11,133 +11,109 @@ using DreamPlanner_Main.Models.UserDefinedModels;
 
 namespace DreamPlanner_Main.Controllers.UserDefinedControllers
 {
-    public class UsersController : Controller
+    public class PartyTypesController : Controller
     {
         private ProjectDbContext db = new ProjectDbContext();
 
-        // GET: Users
+        // GET: PartyTypes
         public ActionResult Index()
         {
-            var users = db.Users.Include(u => u.City);
-            return View(users.ToList());
+            return View(db.PartyTypes.ToList());
         }
 
-        // GET: Users/Details/5
+        // GET: PartyTypes/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
-            if (user == null)
+            PartyType partyType = db.PartyTypes.Find(id);
+            if (partyType == null)
             {
                 return HttpNotFound();
             }
-            return View(user);
+            return View(partyType);
         }
 
-        // GET: Users/Create
+        // GET: PartyTypes/Create
         public ActionResult Create()
         {
-            ViewBag.CountryId = new SelectList(db.Countries, "CountryId","CountryName");
-            ViewBag.CityId = new SelectList(db.Cities.Where(c => c.CountryId == 1).ToList(), "CityId", "CityName");
             return View();
         }
 
-        // POST: Users/Create
+        // POST: PartyTypes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserId,FirstName,LastName,UserEmail,CityId,UserStreetAddress,UserName,UserPassword")] User user)
+        public ActionResult Create([Bind(Include = "PartyTypeId,PartyTypeName")] PartyType partyType)
         {
             if (ModelState.IsValid)
             {
-                db.Users.Add(user);
+                db.PartyTypes.Add(partyType);
                 db.SaveChanges();
-                return RedirectToAction("LogIn", "Authentication");
+                return RedirectToAction("Index");
             }
 
-            ViewBag.CityId = new SelectList(db.Cities.Where(c => c.CountryId == 1).ToList(), "CityId", "CityName", user.CityId);
-            return View(user);
+            return View(partyType);
         }
 
-        // GET: Users/Edit/5
+        // GET: PartyTypes/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
-            if (user == null)
+            PartyType partyType = db.PartyTypes.Find(id);
+            if (partyType == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.CityId = new SelectList(db.Cities, "CityId", "CityName", user.CityId);
-            return View(user);
+            return View(partyType);
         }
 
-        // POST: Users/Edit/5
+        // POST: PartyTypes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserId,FirstName,LastName,UserEmail,CityId,UserStreetAddress,UserName,UserPassword")] User user)
+        public ActionResult Edit([Bind(Include = "PartyTypeId,PartyTypeName")] PartyType partyType)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(user).State = EntityState.Modified;
+                db.Entry(partyType).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CityId = new SelectList(db.Cities, "CityId", "CityName", user.CityId);
-            return View(user);
+            return View(partyType);
         }
 
-        // GET: Users/Delete/5
+        // GET: PartyTypes/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
-            if (user == null)
+            PartyType partyType = db.PartyTypes.Find(id);
+            if (partyType == null)
             {
                 return HttpNotFound();
             }
-            return View(user);
+            return View(partyType);
         }
 
-        // POST: Users/Delete/5
+        // POST: PartyTypes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            User user = db.Users.Find(id);
-            db.Users.Remove(user);
+            PartyType partyType = db.PartyTypes.Find(id);
+            db.PartyTypes.Remove(partyType);
             db.SaveChanges();
             return RedirectToAction("Index");
-        }
-
-        public JsonResult GetCityByCountry(int countryId)
-        {
-            var cityList = db.Cities.Where(c => c.CountryId == countryId).ToList();
-            return Json(cityList, JsonRequestBehavior.AllowGet);
-        }
-
-        public JsonResult IsEmailUnique(string userEmail)
-        {
-            bool a = db.Users.ToList().Exists(e => e.UserEmail == userEmail);
-            return Json(!(a), JsonRequestBehavior.AllowGet);
-        }
-
-        public JsonResult IsUserNameUnique(string userName)
-        {
-            bool a = db.Users.ToList().Exists(e => e.UserName == userName);
-            return Json(!(a), JsonRequestBehavior.AllowGet);
         }
 
         protected override void Dispose(bool disposing)

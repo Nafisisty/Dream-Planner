@@ -39,7 +39,7 @@ namespace DreamPlanner_Main.Migrations
                         CityId = c.Int(nullable: false),
                         UserStreetAddress = c.String(nullable: false),
                         UserName = c.String(nullable: false),
-                        UserPassword = c.String(nullable: false),
+                        UserPassword = c.String(nullable: false, maxLength: 10),
                     })
                 .PrimaryKey(t => t.UserId)
                 .ForeignKey("dbo.Cities", t => t.CityId, cascadeDelete: true)

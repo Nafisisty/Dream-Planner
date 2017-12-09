@@ -11,133 +11,114 @@ using DreamPlanner_Main.Models.UserDefinedModels;
 
 namespace DreamPlanner_Main.Controllers.UserDefinedControllers
 {
-    public class UsersController : Controller
+    public class ThemesController : Controller
     {
         private ProjectDbContext db = new ProjectDbContext();
 
-        // GET: Users
+        // GET: Themes
         public ActionResult Index()
         {
-            var users = db.Users.Include(u => u.City);
-            return View(users.ToList());
+            var themes = db.Themes.Include(t => t.PartyType);
+            return View(themes.ToList());
         }
 
-        // GET: Users/Details/5
+        // GET: Themes/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
-            if (user == null)
+            Theme theme = db.Themes.Find(id);
+            if (theme == null)
             {
                 return HttpNotFound();
             }
-            return View(user);
+            return View(theme);
         }
 
-        // GET: Users/Create
+        // GET: Themes/Create
         public ActionResult Create()
         {
-            ViewBag.CountryId = new SelectList(db.Countries, "CountryId","CountryName");
-            ViewBag.CityId = new SelectList(db.Cities.Where(c => c.CountryId == 1).ToList(), "CityId", "CityName");
+            ViewBag.PartyTypeId = new SelectList(db.PartyTypes, "PartyTypeId", "PartyTypeName");
             return View();
         }
 
-        // POST: Users/Create
+        // POST: Themes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserId,FirstName,LastName,UserEmail,CityId,UserStreetAddress,UserName,UserPassword")] User user)
+        public ActionResult Create([Bind(Include = "ThemeId,ThemeName,PartyTypeId")] Theme theme)
         {
             if (ModelState.IsValid)
             {
-                db.Users.Add(user);
+                db.Themes.Add(theme);
                 db.SaveChanges();
-                return RedirectToAction("LogIn", "Authentication");
+                return RedirectToAction("Index");
             }
 
-            ViewBag.CityId = new SelectList(db.Cities.Where(c => c.CountryId == 1).ToList(), "CityId", "CityName", user.CityId);
-            return View(user);
+            ViewBag.PartyTypeId = new SelectList(db.PartyTypes, "PartyTypeId", "PartyTypeName", theme.PartyTypeId);
+            return View(theme);
         }
 
-        // GET: Users/Edit/5
+        // GET: Themes/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
-            if (user == null)
+            Theme theme = db.Themes.Find(id);
+            if (theme == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.CityId = new SelectList(db.Cities, "CityId", "CityName", user.CityId);
-            return View(user);
+            ViewBag.PartyTypeId = new SelectList(db.PartyTypes, "PartyTypeId", "PartyTypeName", theme.PartyTypeId);
+            return View(theme);
         }
 
-        // POST: Users/Edit/5
+        // POST: Themes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserId,FirstName,LastName,UserEmail,CityId,UserStreetAddress,UserName,UserPassword")] User user)
+        public ActionResult Edit([Bind(Include = "ThemeId,ThemeName,PartyTypeId")] Theme theme)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(user).State = EntityState.Modified;
+                db.Entry(theme).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CityId = new SelectList(db.Cities, "CityId", "CityName", user.CityId);
-            return View(user);
+            ViewBag.PartyTypeId = new SelectList(db.PartyTypes, "PartyTypeId", "PartyTypeName", theme.PartyTypeId);
+            return View(theme);
         }
 
-        // GET: Users/Delete/5
+        // GET: Themes/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            User user = db.Users.Find(id);
-            if (user == null)
+            Theme theme = db.Themes.Find(id);
+            if (theme == null)
             {
                 return HttpNotFound();
             }
-            return View(user);
+            return View(theme);
         }
 
-        // POST: Users/Delete/5
+        // POST: Themes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            User user = db.Users.Find(id);
-            db.Users.Remove(user);
+            Theme theme = db.Themes.Find(id);
+            db.Themes.Remove(theme);
             db.SaveChanges();
             return RedirectToAction("Index");
-        }
-
-        public JsonResult GetCityByCountry(int countryId)
-        {
-            var cityList = db.Cities.Where(c => c.CountryId == countryId).ToList();
-            return Json(cityList, JsonRequestBehavior.AllowGet);
-        }
-
-        public JsonResult IsEmailUnique(string userEmail)
-        {
-            bool a = db.Users.ToList().Exists(e => e.UserEmail == userEmail);
-            return Json(!(a), JsonRequestBehavior.AllowGet);
-        }
-
-        public JsonResult IsUserNameUnique(string userName)
-        {
-            bool a = db.Users.ToList().Exists(e => e.UserName == userName);
-            return Json(!(a), JsonRequestBehavior.AllowGet);
         }
 
         protected override void Dispose(bool disposing)

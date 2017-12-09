@@ -34,11 +34,15 @@
                 @Html.EditorFor(model => model.UserEmail, new { htmlAttributes = new { @class = "form-control margin-bottom-20" } })
                 @Html.ValidationMessageFor(model => model.UserEmail, "", new { @class = "text-danger" })
 
-                @Html.LabelFor(model => model.City.CountryId)
-                @Html.DropDownList("CountryId", null, htmlAttributes: new { @class = "form-control margin-bottom-20" })
-                @Html.ValidationMessageFor(model => model.City.CountryId, "", new { @class = "text-danger" })
+                <div class="row">
+                    <div class="col-md-12">
+                        @Html.Label("Select your Country")
+                        @Html.DropDownList("CountryId", null, htmlAttributes: new { @class = "form-control margin-bottom-20" })
+                        @Html.ValidationMessageFor(model => model.City.CountryId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
 
-                @Html.LabelFor(model => model.CityId)
+                @Html.Label("Select your City")
                 @Html.DropDownList("CityId", null, htmlAttributes: new { @class = "form-control margin-bottom-20" })
                 @Html.ValidationMessageFor(model => model.CityId, "", new { @class = "text-danger" })
 
