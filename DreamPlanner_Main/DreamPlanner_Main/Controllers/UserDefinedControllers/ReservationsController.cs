@@ -61,16 +61,32 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ReservationId,ThemeId,HallId,ReservationDate,UserId")] Reservation reservation)
         {
+
             if (ModelState.IsValid)
             {
-                db.Reservations.Add(reservation);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if(IsReserved(reservation.HallId, reservation.ReservationDate))
+                {
+                    ViewBag.ReservationMesg = "The selected hall is already reserved in this date.";
+                    ViewBag.HallId = new SelectList(db.Halls, "HallId", "HallName", reservation.HallId);
+                    ViewBag.PartyTypeId = new SelectList(db.PartyTypes, "PartyTypeId", "PartyTypeName");
+                    ViewBag.ThemeId = new SelectList(db.Themes, "ThemeId", "ThemeName", reservation.ThemeId);
+                    ViewBag.UserId = new SelectList(db.Users, "UserId", "FirstName", reservation.UserId);
+                    return View(reservation);
+                }
+                else
+                {
+                    reservation.UserId = Authentication.UserId;
+                    db.Reservations.Add(reservation);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
 
             ViewBag.HallId = new SelectList(db.Halls, "HallId", "HallName", reservation.HallId);
+            ViewBag.PartyTypeId = new SelectList(db.PartyTypes, "PartyTypeId", "PartyTypeName");
             ViewBag.ThemeId = new SelectList(db.Themes, "ThemeId", "ThemeName", reservation.ThemeId);
             ViewBag.UserId = new SelectList(db.Users, "UserId", "FirstName", reservation.UserId);
+            ViewBag.ReservationMesg = "";
             return View(reservation);
         }
 
@@ -147,6 +163,20 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
         {
             var user = db.Users.Find(Authentication.UserId);
             return Json(user, JsonRequestBehavior.AllowGet);
+        }
+
+        public bool IsReserved(int hallId, DateTime date)
+        {
+            var reservation = db.Reservations.FirstOrDefault(r => r.HallId == hallId && r.ReservationDate == date);
+
+            if(reservation != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         protected override void Dispose(bool disposing)

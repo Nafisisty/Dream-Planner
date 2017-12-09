@@ -27,7 +27,7 @@
                 <input id="UserEmail" class="form-control margin-bottom-20" type="text" readonly="readonly" />
 
 
-                @Html.LabelFor(model => model.Theme.PartyTypeId)
+                @Html.Label("Which type of party you want?")
                 @Html.DropDownList("PartyTypeId", null, htmlAttributes: new { @class = "form-control margin-bottom-20" })
                 @Html.ValidationMessageFor(model => model.Theme.PartyTypeId, "", new { @class = "text-danger" })
 
@@ -44,6 +44,8 @@
                 @Html.ValidationMessageFor(model => model.ReservationDate, "", new { @class = "text-danger" })
 
                 <hr>
+
+                <h4>@ViewBag.ReservationMesg</h4>
 
                 <div class="row">
                     <div class="col-lg-8">
@@ -99,6 +101,21 @@
                     }
                 });
             });
+
+        @*$("#ReservationDate").change(function () {
+            var selectedDate = $("#ReservationDate").val();
+            $("#UserFirstName").val("Fuck you");
+            var json = {hallId: 1, date: selectedDate}
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("IsReserved", "Reservations")',
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(json),
+                success: function (data) {
+                    $("#UserFirstName").val("Fuck you");
+                }
+            });
+        });*@
         });
 </script>
 
