@@ -40,11 +40,18 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
         // GET: Reservations/Create
         public ActionResult Create()
         {
-            ViewBag.HallId = new SelectList(db.Halls, "HallId", "HallName");
-            ViewBag.PartyTypeId = new SelectList(db.PartyTypes, "PartyTypeId", "PartyTypeName");
-            ViewBag.ThemeId = new SelectList(db.Themes.Where(t => t.PartyTypeId == 1).ToList(), "ThemeId", "ThemeName");
-            ViewBag.UserId = new SelectList(db.Users, "UserId", "FirstName");
-            return View();
+            if (Authentication.IsAuthenticated)
+            {
+                ViewBag.HallId = new SelectList(db.Halls, "HallId", "HallName");
+                ViewBag.PartyTypeId = new SelectList(db.PartyTypes, "PartyTypeId", "PartyTypeName");
+                ViewBag.ThemeId = new SelectList(db.Themes.Where(t => t.PartyTypeId == 1).ToList(), "ThemeId", "ThemeName");
+                ViewBag.UserId = new SelectList(db.Users, "UserId", "FirstName");
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("LogIn", "Authentication");
+            }
         }
 
         // POST: Reservations/Create
@@ -134,6 +141,12 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
         {
             var themeList = db.Themes.Where(t => t.PartyTypeId == partyTypeId).ToList();
             return Json(themeList, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetUserInformation()
+        {
+            var user = db.Users.Find(Authentication.UserId);
+            return Json(user, JsonRequestBehavior.AllowGet);
         }
 
         protected override void Dispose(bool disposing)

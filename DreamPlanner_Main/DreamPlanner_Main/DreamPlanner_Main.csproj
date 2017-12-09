@@ -173,14 +173,15 @@
     <Compile Include="Controllers\UserDefinedControllers\AuthenticationController.cs" />
     <Compile Include="Controllers\UserDefinedControllers\CitiesController.cs" />
     <Compile Include="Controllers\UserDefinedControllers\CountriesController.cs" />
+    <Compile Include="Controllers\UserDefinedControllers\HallsController.cs" />
     <Compile Include="Controllers\UserDefinedControllers\ReservationsController.cs" />
     <Compile Include="Controllers\UserDefinedControllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712071248500_Version_1.cs" />
-    <Compile Include="Migrations\201712071248500_Version_1.Designer.cs">
-      <DependentUpon>201712071248500_Version_1.cs</DependentUpon>
+    <Compile Include="Migrations\201712091119070_Version_1.cs" />
+    <Compile Include="Migrations\201712091119070_Version_1.Designer.cs">
+      <DependentUpon>201712091119070_Version_1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -504,6 +505,11 @@
     <Content Include="Views\Cities\Details.cshtml" />
     <Content Include="Views\Cities\Edit.cshtml" />
     <Content Include="Views\Cities\Index.cshtml" />
+    <Content Include="Views\Halls\Create.cshtml" />
+    <Content Include="Views\Halls\Delete.cshtml" />
+    <Content Include="Views\Halls\Details.cshtml" />
+    <Content Include="Views\Halls\Edit.cshtml" />
+    <Content Include="Views\Halls\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -519,8 +525,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712071248500_Version_1.resx">
-      <DependentUpon>201712071248500_Version_1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712091119070_Version_1.resx">
+      <DependentUpon>201712091119070_Version_1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
