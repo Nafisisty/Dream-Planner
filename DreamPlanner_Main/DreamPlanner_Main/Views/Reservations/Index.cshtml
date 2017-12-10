@@ -4,48 +4,6 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Thank you for your reservation.</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Hall.HallName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Theme.ThemeName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.User.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReservationDate)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hall.HallName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Theme.ThemeName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.User.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReservationDate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ReservationId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ReservationId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ReservationId })
-        </td>
-    </tr>
-}
-
-</table>
+<h4>An Email has sent to you with your reservation code. Please pay 50% advance within one week from reservation. Otherwise, your reservation will be cancelled.</h4>

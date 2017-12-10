@@ -43,6 +43,9 @@
                 @Html.EditorFor(model => model.ReservationDate, new { htmlAttributes = new { @class = "form-control margin-bottom-20" } })
                 @Html.ValidationMessageFor(model => model.ReservationDate, "", new { @class = "text-danger" })
 
+                @Html.Label("Total Rent")
+                <input id="TotalRent" class="form-control margin-bottom-20" type="text" readonly="readonly" />
+
                 <hr>
 
                 <h4>@ViewBag.ReservationMesg</h4>
@@ -101,6 +104,39 @@
                     }
                 });
             });
+
+        $("#ThemeId").change(function () {
+            var thmId = $("#ThemeId").val();
+            var prtpId = $("#PartyTypeId").val();
+            var hlId = $("#HallId").val();
+            $("#HallId").empty();
+            var json = { themeId: thmId, partyTypeId: prtpId,  hallId: hlId};
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("CalculateTotalRent", "Reservations")',
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(json),
+                success: function (data) {
+                    $("#TotalRent").val("" + data);
+                }
+            });
+        });
+
+        $("#HallId").change(function () {
+            var thmId = $("#ThemeId").val();
+            var prtpId = $("#PartyTypeId").val();
+            var hlId = $("#HallId").val();
+            var json = { themeId: thmId, partyTypeId: prtpId, hallId: hlId };
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("CalculateTotalRent", "Reservations")',
+                contentType: "application/json; charset=utf-8",
+                data: JSON.stringify(json),
+                success: function (data) {
+                    $("#TotalRent").val("" + data);
+                }
+            });
+        });
 
         @*$("#ReservationDate").change(function () {
             var selectedDate = $("#ReservationDate").val();

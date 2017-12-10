@@ -59,7 +59,7 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ReservationId,ThemeId,HallId,ReservationDate,UserId")] Reservation reservation)
+        public ActionResult Create([Bind(Include = "ReservationId,ThemeId,HallId,ReservationDate,UserId,ReservationCode")] Reservation reservation)
         {
 
             if (ModelState.IsValid)
@@ -76,6 +76,8 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
                 else
                 {
                     reservation.UserId = Authentication.UserId;
+                    reservation.ReservationCode = GetReservationCode(reservation);
+
                     db.Reservations.Add(reservation);
                     db.SaveChanges();
                     return RedirectToAction("Index");
@@ -165,6 +167,35 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
             return Json(user, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult CalculateTotalRent(int partyTypeId, int themeId, int hallId)
+        {
+            int totalRent = 0;
+
+            switch(partyTypeId)
+            {
+                case 1: totalRent = totalRent + 10000;
+                    break;
+                case 2: totalRent = totalRent + 8000;
+                    break;
+                case 3: totalRent = totalRent + 5000;
+                    break;     
+            }
+
+            switch(hallId)
+            {
+                case 1: totalRent = totalRent + 25000;
+                    break;
+                case 2: totalRent = totalRent + 40000;
+                    break;
+                case 3: totalRent = totalRent + 50000;
+                    break;
+            }
+
+            totalRent = totalRent + 5000;
+
+            return Json(totalRent, JsonRequestBehavior.AllowGet);
+        }
+
         public bool IsReserved(int hallId, DateTime date)
         {
             var reservation = db.Reservations.FirstOrDefault(r => r.HallId == hallId && r.ReservationDate == date);
@@ -177,6 +208,13 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
             {
                 return false;
             }
+        }
+
+        private string GetReservationCode(Reservation reservation)
+        {
+            Random rnd = new Random();
+            string reservationCode = rnd.Next(1, 999) + reservation.UserId + "" + reservation.ReservationDate.Day + "" + reservation.ReservationDate.Year + "" + reservation.ReservationDate.Month + "" + DateTime.Now.Second + "" + DateTime.Now.Minute + "" + DateTime.Now.Hour + "" + reservation.ThemeId + "" + reservation.HallId ;
+            return reservationCode;
         }
 
         protected override void Dispose(bool disposing)

@@ -31,6 +31,15 @@ namespace DreamPlanner_Main.Models.UserDefinedModels
             set { defaultDate = value; }
         }
 
+        [Required]
+        public int TotalRent { get; set; }
+
+        public string ReservationCode { get; set; }
+
+        public bool AdvancePayment { get; set; }
+
+        public bool IsPaid { get; set; }
+
         public int UserId { get; set; }
         public User User { get; set; }
     }

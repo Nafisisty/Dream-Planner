@@ -75,6 +75,10 @@ namespace DreamPlanner_Main.Migrations
                         ThemeId = c.Int(nullable: false),
                         HallId = c.Int(nullable: false),
                         ReservationDate = c.DateTime(nullable: false),
+                        TotalRent = c.Int(nullable: false),
+                        ReservationCode = c.String(),
+                        AdvancePayment = c.Boolean(nullable: false),
+                        IsPaid = c.Boolean(nullable: false),
                         UserId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.ReservationId)
