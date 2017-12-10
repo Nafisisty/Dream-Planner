@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using DreamPlanner_Main.Models;
 using DreamPlanner_Main.Models.UserDefinedModels;
+using System.Net.Mail;
 
 namespace DreamPlanner_Main.Controllers.UserDefinedControllers
 {
@@ -59,7 +60,7 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ReservationId,ThemeId,HallId,ReservationDate,UserId,ReservationCode")] Reservation reservation)
+        public ActionResult Create([Bind(Include = "ReservationId,ThemeId,HallId,ReservationDate,UserId,ReservationCode,TotalRent")] Reservation reservation)
         {
 
             if (ModelState.IsValid)
@@ -77,9 +78,13 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
                 {
                     reservation.UserId = Authentication.UserId;
                     reservation.ReservationCode = GetReservationCode(reservation);
+                    reservation.AdvancePayment = false;
+                    reservation.IsPaid = false;
 
                     db.Reservations.Add(reservation);
                     db.SaveChanges();
+
+                    SendEmail(reservation.ReservationCode);
                     return RedirectToAction("Index");
                 }
             }
@@ -215,6 +220,30 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
             Random rnd = new Random();
             string reservationCode = rnd.Next(1, 999) + reservation.UserId + "" + reservation.ReservationDate.Day + "" + reservation.ReservationDate.Year + "" + reservation.ReservationDate.Month + "" + DateTime.Now.Second + "" + DateTime.Now.Minute + "" + DateTime.Now.Hour + "" + reservation.ThemeId + "" + reservation.HallId ;
             return reservationCode;
+        }
+
+        private void SendEmail(string code)
+        {
+            var user = db.Users.Find(Authentication.UserId);
+            MailMessage mailMessage = new MailMessage("dreamplanner.bth@gmail.com", user.UserEmail);
+            try
+            {
+                mailMessage.Subject = "Reservation Code!!!!";
+                mailMessage.Body = "Congratulation!!!,\n\nYour reservation is successful!!! Please pay 50% advance within a week. Otherwise, your happiness won't last. Please bring this reservation code: '" + code + "' while payment.";
+                SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+                smtpClient.Credentials = new NetworkCredential()
+                {
+                    UserName = "dreamplanner.bth@gmail.com",
+                    Password = "dream12345"
+                };
+                smtpClient.EnableSsl = true;
+                smtpClient.Send(mailMessage);
+                Response.Write("E-mail sent!");
+            }
+            catch(Exception ex)
+            {
+                Response.Write("Could not send the e-mail - error: " + ex.Message);
+            }
         }
 
         protected override void Dispose(bool disposing)

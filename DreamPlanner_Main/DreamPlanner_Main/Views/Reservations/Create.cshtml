@@ -44,7 +44,8 @@
                 @Html.ValidationMessageFor(model => model.ReservationDate, "", new { @class = "text-danger" })
 
                 @Html.Label("Total Rent")
-                <input id="TotalRent" class="form-control margin-bottom-20" type="text" readonly="readonly" />
+                @*<input id="TotalRent" class="form-control margin-bottom-20" type="text" readonly="readonly" />*@
+                @Html.EditorFor(model => model.TotalRent, new { htmlAttributes = new { @class = "form-control margin-bottom-20", @readonly = "readonly" } })
 
                 <hr>
 
@@ -73,6 +74,20 @@
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script>
     $(document).ready(function () {
+
+        var thmId = $("#ThemeId").val();
+        var prtpId = $("#PartyTypeId").val();
+        var hlId = $("#HallId").val();
+        var json = { themeId: thmId, partyTypeId: prtpId, hallId: hlId };
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("CalculateTotalRent", "Reservations")',
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(json),
+            success: function (data) {
+                $("#TotalRent").val("" + data);
+            }
+        });
 
         var json = "";
         $.ajax({
