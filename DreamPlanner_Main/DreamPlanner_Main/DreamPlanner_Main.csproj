@@ -525,8 +525,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Gallery.cshtml" />
     <Content Include="Views\Home\Birthday.cshtml" />
-    <Content Include="Views\Home\Buddist.cshtml" />
     <Content Include="Views\Home\Hindu.cshtml" />
+    <Content Include="Views\Home\Buddist.cshtml" />
     <Content Include="Views\Home\Muslim.cshtml" />
     <Content Include="Views\Home\Service.cshtml" />
     <Content Include="Views\Home\Wedding.cshtml" />
