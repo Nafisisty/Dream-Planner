@@ -7,13 +7,13 @@
 <div class="container">
     <div class="row margin-vert-30">
         <div class="col-md-6 col-md-offset-3 col-sm-offset-3">
-            @using (Html.BeginForm("Create", "Reservations", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "signup-page", role = "form" }))
+    @using (Html.BeginForm("Create", "Reservations", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "signup-page", role = "form" }))
             {
-                @Html.AntiForgeryToken()
+        @Html.AntiForgeryToken()
 
-                <div class="signup-header">
-                    <h2>Reserve your party</h2>
-                </div>
+        <div class="signup-header">
+            <h2>Reserve your party</h2>
+        </div>
 
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
@@ -40,12 +40,13 @@
                 @Html.ValidationMessageFor(model => model.HallId, "", new { @class = "text-danger" })
 
                 @Html.LabelFor(model => model.ReservationDate)
-                @Html.EditorFor(model => model.ReservationDate, new { htmlAttributes = new { @class = "form-control margin-bottom-20" } })
+                @Html.EditorFor(model => model.ReservationDate, new { htmlAttributes = new { @class = "form-control margin-bottom-20 datepicker" } })
                 @Html.ValidationMessageFor(model => model.ReservationDate, "", new { @class = "text-danger" })
 
                 @Html.Label("Total Rent")
                 @*<input id="TotalRent" class="form-control margin-bottom-20" type="text" readonly="readonly" />*@
                 @Html.EditorFor(model => model.TotalRent, new { htmlAttributes = new { @class = "form-control margin-bottom-20", @readonly = "readonly" } })
+
 
                 <hr>
 
@@ -62,18 +63,60 @@
             }
 
         </div>
+        <div id="calendar"> </div>
+
     </div>
 
 
 </div>
 
+<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
 
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script>
+<script type="text/javascript">
+
+
     $(document).ready(function () {
+
+        //var disableddates = ["12-3-2017", "12-11-2017", "12-25-2017", "12-20-2017"];
+
+        $(".datepicker").datepicker({
+            dateFormat: "yy-mm-dd",
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-1:+5"
+            //minDate: new Date(2017,11,13),
+            //maxDate: new Date(2018, 02, 31),
+            //beforeShowDay: function (date) {
+
+            //    var m = date.getMonth();
+            //    var d = date.getDate();
+            //    var y = date.getFullYear();
+
+            //    // First convert the date in to the mm-dd-yyyy format 
+            //    // Take note that we will increment the month count by 1 
+            //    var currentdate = (m + 1) + '-' + d + '-' + y;
+
+            //    // We will now check if the date belongs to disableddates array 
+            //    for (var i = 0; i < disableddates.length; i++) {
+
+            //        // Now check if the current date is in disabled dates array. 
+            //        if ($.inArray(currentdate, disableddates) != -1) {
+            //            return [false];
+            //        }
+            //        else
+            //        {
+            //            return [true];
+            //        }
+            //    }
+
+            //}
+        });
+
 
         var thmId = $("#ThemeId").val();
         var prtpId = $("#PartyTypeId").val();
@@ -167,7 +210,7 @@
                 }
             });
         });*@
-        });
+    });
 </script>
 
 }

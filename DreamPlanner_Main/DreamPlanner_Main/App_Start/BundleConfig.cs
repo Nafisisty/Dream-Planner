@@ -11,6 +11,9 @@ namespace DreamPlanner_Main
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/assets/js/jquery.min.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
+                        "~/Scripts/jquery-ui-{version}.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 

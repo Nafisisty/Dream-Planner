@@ -22,14 +22,8 @@ namespace DreamPlanner_Main.Models.UserDefinedModels
         public int HallId { get; set; }
         public Hall Hall { get; set; }
         [Required]
-        [DisplayName("Date")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime ReservationDate
-        {
-            get { return (defaultDate == DateTime.MinValue) ? DateTime.Now : defaultDate; }
-            set { defaultDate = value; }
-        }
+        [DisplayName("Select a date")]
+        public DateTime ReservationDate { get; set; }
 
         [Required]
         public int TotalRent { get; set; }
