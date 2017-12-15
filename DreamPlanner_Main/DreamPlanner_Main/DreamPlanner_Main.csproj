@@ -197,9 +197,11 @@
     <Compile Include="Models\UserDefinedModels\Hall.cs" />
     <Compile Include="Models\UserDefinedModels\LogInModel.cs" />
     <Compile Include="Models\UserDefinedModels\PartyType.cs" />
+    <Compile Include="Models\UserDefinedModels\Rating.cs" />
     <Compile Include="Models\UserDefinedModels\Reservation.cs" />
     <Compile Include="Models\UserDefinedModels\Theme.cs" />
     <Compile Include="Models\UserDefinedModels\User.cs" />
+    <Compile Include="Models\UserDefinedModels\UserExperience.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
