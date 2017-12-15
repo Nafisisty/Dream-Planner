@@ -25,5 +25,8 @@ namespace DreamPlanner_Main.Models
 
         public DbSet<Theme> Themes { get; set; }
 
+        public DbSet<Rating> Ratings { get; set; }
+
+        public DbSet<UserExperience> UserExperiences { get; set; }
     }
 }
