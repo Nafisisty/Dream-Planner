@@ -38,9 +38,9 @@ namespace DreamPlanner_Main.Migrations
                 );
 
             context.Halls.AddOrUpdate(
-                new Hall { HallName = "Small", HallCapacity = 50 },
-                new Hall { HallName = "Medium", HallCapacity = 100 },
-                new Hall { HallName = "Large", HallCapacity = 200 }
+                new Hall { HallName = "Small (50 persons)", HallCapacity = 50 },
+                new Hall { HallName = "Medium (100 persons)", HallCapacity = 100 },
+                new Hall { HallName = "Large (200 persons)", HallCapacity = 200 }
                 );
 
             context.PartyTypes.AddOrUpdate(
@@ -52,6 +52,13 @@ namespace DreamPlanner_Main.Migrations
                 new PartyType { PartyTypeName = "Christian Community" }
                 );
 
+            context.Ratings.AddOrUpdate(
+                new Rating { RatingName = "Very Bad"},
+                new Rating { RatingName = "More should be improved" },
+                new Rating { RatingName = "Satisfied" },
+                new Rating { RatingName = "Awesome" }
+
+                );
         }
     }
 }
