@@ -36,6 +36,7 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
             }
             return View(userExperience);
         }
+		
 		// GET: UserExperiences/Create
         public ActionResult Create()
         {
@@ -60,6 +61,7 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
             ViewBag.UserId = new SelectList(db.Users, "UserId", "FirstName", userExperience.UserId);
             return View(userExperience);
         }
+		
 		// GET: UserExperiences/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -93,6 +95,41 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
             ViewBag.RatingId = new SelectList(db.Ratings, "RatingId", "RatingName", userExperience.RatingId);
             ViewBag.UserId = new SelectList(db.Users, "UserId", "FirstName", userExperience.UserId);
             return View(userExperience);
+        }
+		
+		// GET: UserExperiences/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            UserExperience userExperience = db.UserExperiences.Find(id);
+            if (userExperience == null)
+            {
+                return HttpNotFound();
+            }
+            return View(userExperience);
+        }
+
+        // POST: UserExperiences/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            UserExperience userExperience = db.UserExperiences.Find(id);
+            db.UserExperiences.Remove(userExperience);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
 	}
 }
