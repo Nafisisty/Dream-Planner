@@ -36,5 +36,29 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
             }
             return View(userExperience);
         }
+		// GET: UserExperiences/Create
+        public ActionResult Create()
+        {
+            ViewBag.RatingId = new SelectList(db.Ratings, "RatingId", "RatingName");
+            ViewBag.UserId = new SelectList(db.Users, "UserId", "FirstName");
+            return View();
+        }
+
+        // POST: UserExperiences/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "UserExperienceId,RatingId,ExperienceDescription")] UserExperience userExperience)
+        {
+            if (ModelState.IsValid)
+            {                
+                return RedirectToAction("Index", "Home");
+            }
+
+            ViewBag.RatingId = new SelectList(db.Ratings, "RatingId", "RatingName", userExperience.RatingId);
+            ViewBag.UserId = new SelectList(db.Users, "UserId", "FirstName", userExperience.UserId);
+            return View(userExperience);
+        }
 	}
 }
