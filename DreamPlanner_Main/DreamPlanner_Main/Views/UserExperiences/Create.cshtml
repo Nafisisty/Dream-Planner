@@ -1,0 +1,59 @@
+﻿@model DreamPlanner_Main.Models.UserDefinedModels.UserExperience
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="container">
+    <div class="row margin-vert-30">
+        <div class="col-md-6 col-md-offset-3 col-sm-offset-3">
+            @using (Html.BeginForm("Create", "UserExperiences", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "signup-page", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="signup-header">
+                    <h2>Share your experience with us</h2>
+                </div>
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                if (ViewBag.Message == "")
+                {
+
+                @Html.LabelFor(model => model.RatingId, "Choose a rating", htmlAttributes: new { @class = "control-label" })
+                @Html.DropDownList("RatingId", null, htmlAttributes: new { @class = "form-control margin-bottom-20" })
+                @Html.ValidationMessageFor(model => model.RatingId, "", new { @class = "text-danger" })
+
+
+                @Html.LabelFor(model => model.ExperienceDescription, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.ExperienceDescription, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ExperienceDescription, "", new { @class = "text-danger" })
+
+                <hr>
+
+                <div class="row">
+                    <div class="col-lg-8">
+                    </div>
+                    <div class="col-lg-4 text-right">
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </div>
+                }
+                else
+                {
+                    <label>@ViewBag.Message</label>
+                }
+            }
+
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
