@@ -177,13 +177,14 @@
     <Compile Include="Controllers\UserDefinedControllers\PartyTypesController.cs" />
     <Compile Include="Controllers\UserDefinedControllers\ReservationsController.cs" />
     <Compile Include="Controllers\UserDefinedControllers\ThemesController.cs" />
+    <Compile Include="Controllers\UserDefinedControllers\UserExperiencesController.cs" />
     <Compile Include="Controllers\UserDefinedControllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712132023348_Version_1.cs" />
-    <Compile Include="Migrations\201712132023348_Version_1.Designer.cs">
-      <DependentUpon>201712132023348_Version_1.cs</DependentUpon>
+    <Compile Include="Migrations\201712191602261_Version_1.cs" />
+    <Compile Include="Migrations\201712191602261_Version_1.Designer.cs">
+      <DependentUpon>201712191602261_Version_1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -610,6 +611,10 @@
     <Content Include="Views\Themes\Details.cshtml" />
     <Content Include="Views\Themes\Edit.cshtml" />
     <Content Include="Views\Themes\Index.cshtml" />
+    <Content Include="Views\UserExperiences\Create.cshtml" />
+    <Content Include="Views\UserExperiences\Details.cshtml" />
+    <Content Include="Views\UserExperiences\Edit.cshtml" />
+    <Content Include="Views\UserExperiences\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -624,8 +629,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712132023348_Version_1.resx">
-      <DependentUpon>201712132023348_Version_1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712191602261_Version_1.resx">
+      <DependentUpon>201712191602261_Version_1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

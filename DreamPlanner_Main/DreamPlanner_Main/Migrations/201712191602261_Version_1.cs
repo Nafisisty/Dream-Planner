@@ -110,22 +110,52 @@ namespace DreamPlanner_Main.Migrations
                     })
                 .PrimaryKey(t => t.PartyTypeId);
             
+            CreateTable(
+                "dbo.Ratings",
+                c => new
+                    {
+                        RatingId = c.Int(nullable: false, identity: true),
+                        RatingName = c.String(),
+                    })
+                .PrimaryKey(t => t.RatingId);
+            
+            CreateTable(
+                "dbo.UserExperiences",
+                c => new
+                    {
+                        UserExperienceId = c.Int(nullable: false, identity: true),
+                        RatingId = c.Int(nullable: false),
+                        ExperienceDescription = c.String(nullable: false),
+                        UserId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.UserExperienceId)
+                .ForeignKey("dbo.Ratings", t => t.RatingId, cascadeDelete: true)
+                .ForeignKey("dbo.Users", t => t.UserId, cascadeDelete: true)
+                .Index(t => t.RatingId)
+                .Index(t => t.UserId);
+            
         }
         
         public override void Down()
         {
+            DropForeignKey("dbo.UserExperiences", "UserId", "dbo.Users");
+            DropForeignKey("dbo.UserExperiences", "RatingId", "dbo.Ratings");
             DropForeignKey("dbo.Reservations", "UserId", "dbo.Users");
             DropForeignKey("dbo.Reservations", "ThemeId", "dbo.Themes");
             DropForeignKey("dbo.Themes", "PartyTypeId", "dbo.PartyTypes");
             DropForeignKey("dbo.Reservations", "HallId", "dbo.Halls");
             DropForeignKey("dbo.Users", "CityId", "dbo.Cities");
             DropForeignKey("dbo.Cities", "CountryId", "dbo.Countries");
+            DropIndex("dbo.UserExperiences", new[] { "UserId" });
+            DropIndex("dbo.UserExperiences", new[] { "RatingId" });
             DropIndex("dbo.Themes", new[] { "PartyTypeId" });
             DropIndex("dbo.Reservations", new[] { "UserId" });
             DropIndex("dbo.Reservations", new[] { "HallId" });
             DropIndex("dbo.Reservations", new[] { "ThemeId" });
             DropIndex("dbo.Users", new[] { "CityId" });
             DropIndex("dbo.Cities", new[] { "CountryId" });
+            DropTable("dbo.UserExperiences");
+            DropTable("dbo.Ratings");
             DropTable("dbo.PartyTypes");
             DropTable("dbo.Themes");
             DropTable("dbo.Reservations");

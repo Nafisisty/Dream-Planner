@@ -82,39 +82,37 @@
 
     $(document).ready(function () {
 
-        //var disableddates = ["12-3-2017", "12-11-2017", "12-25-2017", "12-20-2017"];
+        var disableddates = ["12-3-2017", "12-11-2017", "12-25-2017", "12-20-2017"];
 
         $(".datepicker").datepicker({
             dateFormat: "yy-mm-dd",
             changeMonth: true,
             changeYear: true,
-            yearRange: "-1:+5"
-            //minDate: new Date(2017,11,13),
-            //maxDate: new Date(2018, 02, 31),
-            //beforeShowDay: function (date) {
+            yearRange: "-1:+5",
+            beforeShowDay: function (date) {
 
-            //    var m = date.getMonth();
-            //    var d = date.getDate();
-            //    var y = date.getFullYear();
+                var m = date.getMonth();
+                var d = date.getDate();
+                var y = date.getFullYear();
 
-            //    // First convert the date in to the mm-dd-yyyy format 
-            //    // Take note that we will increment the month count by 1 
-            //    var currentdate = (m + 1) + '-' + d + '-' + y;
+                // First convert the date in to the mm-dd-yyyy format 
+                // Take note that we will increment the month count by 1 
+                var currentdate = (m + 1) + '-' + d + '-' + y;
 
-            //    // We will now check if the date belongs to disableddates array 
-            //    for (var i = 0; i < disableddates.length; i++) {
+                // We will now check if the date belongs to disableddates array 
+                for (var i = 0; i < disableddates.length; i++) {
 
-            //        // Now check if the current date is in disabled dates array. 
-            //        if ($.inArray(currentdate, disableddates) != -1) {
-            //            return [false];
-            //        }
-            //        else
-            //        {
-            //            return [true];
-            //        }
-            //    }
+                    // Now check if the current date is in disabled dates array. 
+                    if ($.inArray(currentdate, disableddates) != -1) {
+                        return [false];
+                    }
+                    else
+                    {
+                        return [true];
+                    }
+                }
 
-            //}
+            }
         });
 
 
@@ -196,20 +194,6 @@
             });
         });
 
-        @*$("#ReservationDate").change(function () {
-            var selectedDate = $("#ReservationDate").val();
-            $("#UserFirstName").val("Fuck you");
-            var json = {hallId: 1, date: selectedDate}
-            $.ajax({
-                type: "POST",
-                url: '@Url.Action("IsReserved", "Reservations")',
-                contentType: "application/json; charset=utf-8",
-                data: JSON.stringify(json),
-                success: function (data) {
-                    $("#UserFirstName").val("Fuck you");
-                }
-            });
-        });*@
     });
 </script>
 
