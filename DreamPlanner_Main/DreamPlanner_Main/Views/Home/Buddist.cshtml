@@ -2,7 +2,22 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<style type="text/css">
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.imgbox.pack.js"></script>
+<script>
+$(function(){
+	$("#img1").imgbox({
+		'speedIn'		: 0,
+		'speedOut'		: 0,
+		'alignment'		: 'center',
+		'overlayShow'	: true,
+		'allowMultiple'	: false
+	});
+});
+</script>
+
+<link rel="stylesheet" href="~/assets/css/bigPic.css" type="text/css" />
+<style type="text/css" >
     strong {
         font-family: georgia, serif;
         color:#3E89CF;
@@ -13,7 +28,9 @@
         word-spacing: 2.4pt;
         line-height: 2.2;
     }
+
 </style>
+
 
 <div class="container body-content" style="margin-bottom:2%;">
     <div style="display:inline;float:left;width:53%;margin-top:1%;">
@@ -49,14 +66,30 @@
     </div>
 
     <!-- Pictures   Pictures   Pictures   Pictures   Pictures   Pictures   Pictures-->
-    <div style="display:inline;float:right;width:45%;">
-        <img src="~/assets/img/community/buddist3.jpg" style="margin-top:8%;"/><br />
-        <img src="~/assets/img/community/buddist1.jpg" style="margin-top:8%;" /><br />
-        <img src="~/assets/img/community/buddist6.jpg" style="margin-top:8%;" /><br />
-        <img src="~/assets/img/community/buddist2.jpg" style="margin-top:8%;" /><br />     
-        <img src="~/assets/img/community/buddist7.jpg" style="margin-top:8%;" /><br />
+    <div style="display:inline;float:right;width:45%;" id="content">
+        <a href="~/assets/img/community/buddist3-Big.jpg" value="Press here to see a big picture!">
+            <img src="~/assets/img/community/buddist3.jpg" style="margin-top:8%;" id="img1" /> 
+        </a><br />
+        
+        <a href="~/assets/img/community/buddist1.jpg" value="Press here to see a big picture!">
+            <img src="~/assets/img/community/buddist1.jpg" style="margin-top:8%;" /><br />
+        </a>
+        
+        <a href="~/assets/img/community/buddist6.jpg" value="Press here to see a big picture!">
+            <img src="~/assets/img/community/buddist6.jpg" style="margin-top:8%;" /><br />
+        </a>
+        
+        <a href="~/assets/img/community/buddist2.jpg"  value="Press here to see a big picture!">
+            <img src="~/assets/img/community/buddist2.jpg" style="margin-top:8%;" /><br />    
+        </a>
+         
+        <a href="~/assets/img/community/buddist7.jpg">
+            <img src="~/assets/img/community/buddist7.jpg" style="margin-top:8%;" /><br />
+        </a>
+       
        
     </div>
+
 
 </div>
 

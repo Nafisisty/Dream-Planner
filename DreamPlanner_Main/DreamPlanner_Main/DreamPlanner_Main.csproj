@@ -206,6 +206,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\bigPic.css" />
     <Content Include="assets\css\animate.css" />
     <Content Include="assets\css\bootstrap.css" />
     <Content Include="assets\css\custom.css" />
@@ -229,6 +230,29 @@
     <Content Include="assets\img\birthday\girlslide3.jpg" />
     <Content Include="assets\img\birthday\teenbirthday.jpg" />
     <Content Include="assets\img\birthday\teenbirthday2.jpg" />
+    <Content Include="assets\img\community\buddist1.jpg" />
+    <Content Include="assets\img\community\buddist2.jpg" />
+    <Content Include="assets\img\community\buddist3-Big.jpg" />
+    <Content Include="assets\img\community\buddist3.jpg" />
+    <Content Include="assets\img\community\buddist6.jpg" />
+    <Content Include="assets\img\community\buddist7.jpg" />
+    <Content Include="assets\img\community\christan.png" />
+    <Content Include="assets\img\community\christian1.jpg" />
+    <Content Include="assets\img\community\christian2.jpg" />
+    <Content Include="assets\img\community\christian3.jpg" />
+    <Content Include="assets\img\community\christian4.jpg" />
+    <Content Include="assets\img\community\Diwali.png" />
+    <Content Include="assets\img\community\Eid al-adha.png" />
+    <Content Include="assets\img\community\Eid al-Fitr.png" />
+    <Content Include="assets\img\community\hali.png" />
+    <Content Include="assets\img\community\hindu1.jpg" />
+    <Content Include="assets\img\community\hindu2.jpg" />
+    <Content Include="assets\img\community\hindu3.jpg" />
+    <Content Include="assets\img\community\hindu4.jpg" />
+    <Content Include="assets\img\community\ms.png" />
+    <Content Include="assets\img\community\muslim1.jpg" />
+    <Content Include="assets\img\community\muslim2.jpg" />
+    <Content Include="assets\img\community\muslim3.jpg" />
     <Content Include="assets\img\DreamPlannerLogo.png" />
     <Content Include="assets\img\frontpage\filler1.jpg" />
     <Content Include="assets\img\frontpage\filler2.jpg" />
@@ -317,6 +341,7 @@
     <Content Include="assets\img\wedding\front3.jpg" />
     <Content Include="assets\img\wedding\seaRigjt.jpg" />
     <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\jquery.imgbox.pack.js" />
     <Content Include="assets\js\jquery.isotope.js" />
     <Content Include="assets\js\jquery.min.js" />
     <Content Include="assets\js\jquery.slicknav.js" />
@@ -487,6 +512,9 @@
     <Content Include="assets\less\variables.less" />
     <Content Include="assets\img\wedding\fontPic.psd" />
     <Content Include="assets\img\wedding\front3.psd" />
+    <Content Include="assets\img\community\christan.psd" />
+    <Content Include="assets\img\community\Diwali.psd" />
+    <Content Include="assets\img\community\Eid al-Fitr.psd" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
