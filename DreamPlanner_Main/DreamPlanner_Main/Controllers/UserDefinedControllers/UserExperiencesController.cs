@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -11,7 +11,7 @@ using DreamPlanner_Main.Models.UserDefinedModels;
 
 namespace DreamPlanner_Main.Controllers.UserDefinedControllers
 {
-	 public class UserExperiencesController : Controller
+    public class UserExperiencesController : Controller
     {
         private ProjectDbContext db = new ProjectDbContext();
 
@@ -36,13 +36,30 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
             }
             return View(userExperience);
         }
-		
-		// GET: UserExperiences/Create
+
+        // GET: UserExperiences/Create
         public ActionResult Create()
         {
-            ViewBag.RatingId = new SelectList(db.Ratings, "RatingId", "RatingName");
-            ViewBag.UserId = new SelectList(db.Users, "UserId", "FirstName");
-            return View();
+            ViewBag.Message = "";
+            if (Authentication.IsAuthenticated)
+            {
+                var userExperience = db.UserExperiences.Find(Authentication.UserId);
+                if(userExperience == null)
+                {
+                    ViewBag.RatingId = new SelectList(db.Ratings, "RatingId", "RatingName");
+                    ViewBag.UserId = new SelectList(db.Users, "UserId", "FirstName");
+                    return View();
+                }
+                else
+                {
+                    ViewBag.Message = "You have already shared your experience once. Thank you.";
+                    return View();
+                }
+            }
+            else
+            {
+                return RedirectToAction("LogIn", "Authentication");
+            }
         }
 
         // POST: UserExperiences/Create
@@ -54,6 +71,9 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
         {
             if (ModelState.IsValid)
             {                
+                userExperience.UserId = Authentication.UserId;
+                db.UserExperiences.Add(userExperience);
+                db.SaveChanges();
                 return RedirectToAction("Index", "Home");
             }
 
@@ -61,8 +81,8 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
             ViewBag.UserId = new SelectList(db.Users, "UserId", "FirstName", userExperience.UserId);
             return View(userExperience);
         }
-		
-		// GET: UserExperiences/Edit/5
+
+        // GET: UserExperiences/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -96,8 +116,8 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
             ViewBag.UserId = new SelectList(db.Users, "UserId", "FirstName", userExperience.UserId);
             return View(userExperience);
         }
-		
-		// GET: UserExperiences/Delete/5
+
+        // GET: UserExperiences/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -131,5 +151,5 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
             }
             base.Dispose(disposing);
         }
-	}
+    }
 }
