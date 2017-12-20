@@ -201,6 +201,14 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
             return Json(totalRent, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult GetReservedDates(int hallId)
+        {
+            var dateList = db.Reservations.Where(r => r.HallId == hallId).ToList();
+            var dateArray = dateList.Select(d => d.ReservationDate.ToShortDateString()).ToArray();
+            return Json(dateArray, JsonRequestBehavior.AllowGet);
+        }
+
+
         public bool IsReserved(int hallId, DateTime date)
         {
             var reservation = db.Reservations.FirstOrDefault(r => r.HallId == hallId && r.ReservationDate == date);
