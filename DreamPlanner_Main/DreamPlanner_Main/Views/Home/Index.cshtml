@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<DreamPlanner_Main.Models.UserDefinedModels.UserExperience>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -277,78 +279,19 @@
     </div>
 
     <div>
-        <!-- Primary Blockquote -->
-        <blockquote class="primary animated fadeInDown">
-            <p>
-                <em>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."</em>
-            </p>
-            <small>
-                Someone famous in
-                <cite title="Source Title">Source Title</cite>
-            </small>
-        </blockquote>
-        <!-- End Primary Blockquote -->
 
-        <!-- Primary Blockquote -->
-        <blockquote class="primary animated fadeInDown">
-            <p>
-                <em>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."</em>
-            </p>
-            <small>
-                Someone famous in
-                <cite title="Source Title">Source Title</cite>
-            </small>
-        </blockquote>
-        <!-- End Primary Blockquote -->
+        @foreach (var item in Model)
+        {
+            <blockquote class="primary animated fadeInDown">
+                <p>
+                    <em>@item.ExperienceDescription</em>
+                </p>
+                <small>
+                    @item.User.LastName
+                </small>
+            </blockquote>
 
-        <!-- Primary Blockquote -->
-        <blockquote class="primary animated fadeInDown">
-            <p>
-                <em>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."</em>
-            </p>
-            <small>
-                Someone famous in
-                <cite title="Source Title">Source Title</cite>
-            </small>
-        </blockquote>
-        <!-- End Primary Blockquote -->
-
-        <!-- Primary Blockquote -->
-        <blockquote class="primary animated fadeInDown">
-            <p>
-                <em>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."</em>
-            </p>
-            <small>
-                Someone famous in
-                <cite title="Source Title">Source Title</cite>
-            </small>
-        </blockquote>
-        <!-- End Primary Blockquote -->
-
-        <!-- Primary Blockquote -->
-        <blockquote class="primary animated fadeInDown">
-            <p>
-                <em>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."</em>
-            </p>
-            <small>
-                Someone famous in
-                <cite title="Source Title">Source Title</cite>
-            </small>
-        </blockquote>
-        <!-- End Primary Blockquote -->
-
-        <!-- Primary Blockquote -->
-        <blockquote class="primary animated fadeInDown">
-            <p>
-                <em>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."</em>
-            </p>
-            <small>
-                Someone famous in
-                <cite title="Source Title">Source Title</cite>
-            </small>
-        </blockquote>
-        <!-- End Primary Blockquote -->
-
+        }
     </div>
 </div>
 

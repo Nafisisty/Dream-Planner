@@ -2,6 +2,9 @@
 using DreamPlanner_Main.Models.UserDefinedModels;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.Net;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -14,7 +17,9 @@ namespace DreamPlanner_Main.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var feedbackList = db.UserExperiences.Include(u => u.User).Where(u => u.RatingId == 3 || u.RatingId == 4).ToList();
+
+            return View(feedbackList);
         }
 
         public ActionResult About()
