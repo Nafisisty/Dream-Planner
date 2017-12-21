@@ -80,18 +80,22 @@ namespace DreamPlanner_Main.Controllers
 
                 if (db.SaveChanges() > 0)
                 {
-                    ViewBag.ContactResult = "Thank your for your message!";
+                    Response.Write("<script>alert('Thank your for your message!');</script>");
                     return View();
+                    //ViewBag.ContactResult = "Thank your for your message!";
+                    //return View();
                 }
                 else
                 {
-                    ViewBag.ContactResult = "Sorry,something wrong happened, please try it next time...";
+                    Response.Write("<script>alert('Sorry,something wrong happened, please try it next time...');</script>");
+                    //ViewBag.ContactResult = "Sorry,something wrong happened, please try it next time...";
                     return View();
                 }
             }
             else
             {
-                ViewBag.ContactResult = "Sorry, please check your message";
+                Response.Write("<script>alert('Sorry, please check your message');</script>");
+                //ViewBag.ContactResult = "Sorry, please check your message";
                 return View();
             }
         }
