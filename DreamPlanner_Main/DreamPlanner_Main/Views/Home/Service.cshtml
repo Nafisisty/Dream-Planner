@@ -2,6 +2,116 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<style>
+    html {
+        <!-- font-family: sans-serif; -->
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    dfn {
+        font-style: italic;
+    }
+
+    sub, sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+    }
+
+    sup {
+        top: -0.5em;
+    }
+
+    sub {
+        bottom: -0.25em;
+    }
+
+    img {
+        border: 0;
+    }
+
+    svg:not(:root) {
+        overflow: hidden;
+    }
+
+    figure {
+        margin: 1em 40px;
+    }
+
+    pre {
+        overflow: auto;
+    }
+
+    code, kbd, pre, samp {
+        font-family: monospace, monospace;
+        font-size: 1em;
+    }
+
+    fieldset {
+        border: 1px solid #c0c0c0;
+        margin: 0 2px;
+        padding: 0.35em 0.625em 0.75em;
+    }
+
+    legend {
+        border: 0;
+        padding: 0;
+    }
+
+    optgroup {
+        font-weight: bold;
+    }
+</style>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .gallery {
+        padding: 5px;
+        background: #33333338;
+    }
+
+        .gallery > div {
+            position: relative;
+            float: left;
+            padding: 5px;
+        }
+
+            .gallery > div > img {
+                width: 100%;
+                transition: .1s transform;
+                transform: translateZ(0);
+                /* hack */
+            }
+
+            .gallery > div:hover {
+                z-index: 1;
+            }
+
+                .gallery > div:hover > img {
+                    transform: scale(1.5, 1.5);
+                    transition: .3s transform;
+                }
+
+    .cf:before, .cf:after {
+        display: table;
+        content: "";
+        line-height: 0;
+    }
+
+    .cf:after {
+        clear: both;
+    }
+</style>
+
+<script src="js/prefixfree.min.js"></script>
+
 <div class="container no-padding">
     <div class="container">
         <div class="row">
@@ -49,7 +159,12 @@
                         Wedding
                     </h2>
                     <div>
-                        <img class="animate fadeInRight" style="float: right ; margin:1em ;" src="~/assets/img/services/wedding4.jpg" alt="Wedding Photo" width="600" height="300">
+                        @*<div class="gallery cf">
+                            <div>*@
+                                <img class="animate fadeInRight" style="float: right ; margin:1em ;" src="~/assets/img/services/wedding4.jpg" alt="Wedding Photo" width="600" height="300">
+                            @*</div>
+                        </div>*@
+                        
                         <p class="descri">
                             We make sure that the space is perfect for you and your party.Contact us to set up a private tour of the facility. We would love to show you what we have to offer and how we can make your wedding day better than your wildest dreams!
                             <ul style="list-style-type:none;margin:0;padding:0;">
@@ -117,4 +232,5 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>

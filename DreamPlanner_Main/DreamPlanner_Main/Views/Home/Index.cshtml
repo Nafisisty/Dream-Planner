@@ -4,6 +4,118 @@
     ViewBag.Title = "Home Page";
 }
 
+<style>
+    html {
+        <!-- font-family: sans-serif; -->
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+    }
+
+    dfn {
+        font-style: italic;
+    }
+
+    sub, sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+    }
+
+    sup {
+        top: -0.5em;
+    }
+
+    sub {
+        bottom: -0.25em;
+    }
+
+    img {
+        border: 0;
+    }
+
+    svg:not(:root) {
+        overflow: hidden;
+    }
+
+    figure {
+        margin: 1em 40px;
+    }
+
+    pre {
+        overflow: auto;
+    }
+
+    code, kbd, pre, samp {
+        font-family: monospace, monospace;
+        font-size: 1em;
+    }
+
+    fieldset {
+        border: 1px solid #c0c0c0;
+        margin: 0 2px;
+        padding: 0.35em 0.625em 0.75em;
+    }
+
+    legend {
+        border: 0;
+        padding: 0;
+    }
+
+    optgroup {
+        font-weight: bold;
+    }
+</style>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .gallery {
+        margin: 1% auto;
+        padding: 5px;
+        background: #33333338;
+    }
+
+        .gallery > div {
+            position: relative;
+            float: left;
+            padding: 5px;
+        }
+
+            .gallery > div > img {
+                width: 100%;
+                transition: .1s transform;
+                transform: translateZ(0);
+                /* hack */
+            }
+
+            .gallery > div:hover {
+                z-index: 1;
+            }
+
+                .gallery > div:hover > img {
+                    transform: scale(1.5, 1.5);
+                    transition: .3s transform;
+                }
+
+    .cf:before, .cf:after {
+        display: table;
+        content: "";
+        line-height: 0;
+    }
+
+    .cf:after {
+        clear: both;
+    }
+</style>
+
+<script src="js/prefixfree.min.js"></script>
+
+
 <div class="container no-padding">
     <div class="row">
         <!-- Carousel Slideshow -->
@@ -102,15 +214,24 @@
             <h2 class="item-title">
                 Why Choose Us???
             </h2>
-            <p>
-                <img class="animate fadeInRight" style="float: right;" src="~/assets/img/frontpage/AllReligionPhoto.jpg" alt="Service Photo">Dream Planner
-                do not compromise on quality with our unique and creative ideas. We provide ultimate customer satisfaction. Being loyal to our clients, we deliver
-                exceptional services, we want us to be remembered and listed among the top brands of the present era.
-            </p>
-            <p>
-                Dream Planner offers a wide range of services Wedding Planning, Birthday Parties, Community Events, and Religious Events etc.
-                Having Dream Planner, plan your event means that you’ll have everything you’ll need to make your special day truly remarkable
-            </p>
+            <div>
+                <div style="float:left; display:inline; width:48%;">
+                    <p>
+                        Dream Planner
+                        do not compromise on quality with our unique and creative ideas. We provide ultimate customer satisfaction. Being loyal to our clients, we deliver
+                        exceptional services, we want us to be remembered and listed among the top brands of the present era.
+
+                        Dream Planner offers a wide range of services Wedding Planning, Birthday Parties, Community Events, and Religious Events etc.
+                        Having Dream Planner, plan your event means that you’ll have everything you’ll need to make your special day truly remarkable
+                    </p>
+                </div>
+                <div class="gallery cf" style="float:right; display:inline; width:48%;">
+                    <div>
+                        <img class="animate fadeInRight" style="float: right;" src="~/assets/img/frontpage/AllReligionPhoto.jpg" alt="Service Photo">
+                    </div>
+                </div>
+            </div>
+                
         </div>
         <div class="clearfix"></div>
         <!-- End Main Article -->
@@ -131,121 +252,73 @@
     <div class="portfolio-group">
         <!-- Portfolio Item -->
         <div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
-            <div class="image-hover">
-                <a href="#">
-                    <figure>
-                        <img src="~/assets/img/portfolio/img1.jpg" alt="image1">
-                        <figcaption>
-                            <h3>Quam putamus</h3>
-                            <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam.</span>
-                        </figcaption>
-                    </figure>
-                </a>
+            <div class="image-hover gallery cf">
+                <div>
+                    <img src="~/assets/img/portfolio/img1.jpg" alt="image1">
+                </div>
             </div>
         </div>
         <!-- //Portfolio Item// -->
         <!-- Portfolio Item -->
         <div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
-            <div class="image-hover">
-                <a href="#">
-                    <figure>
-                        <img src="~/assets/img/portfolio/img2.jpg" alt="image2">
-                        <figcaption>
-                            <h3>Quam putamus</h3>
-                            <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam.</span>
-                        </figcaption>
-                    </figure>
-                </a>
+            <div class="image-hover gallery cf">
+               <div>
+                   <img src="~/assets/img/portfolio/img2.jpg" alt="image2">
+               </div>
             </div>
         </div>
         <!-- //Portfolio Item// -->
         <!-- Portfolio Item -->
         <div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
-            <div class="image-hover">
-                <a href="#">
-                    <figure>
-                        <img src="~/assets/img/portfolio/img3.jpg" alt="image3">
-                        <figcaption>
-                            <h3>Quam putamus</h3>
-                            <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam.</span>
-                        </figcaption>
-                    </figure>
-                </a>
+            <div class="image-hover gallery cf">
+                <div>
+                    <img src="~/assets/img/portfolio/img3.jpg" alt="image3">
+                </div>
             </div>
         </div>
         <!-- //Portfolio Item// -->
         <!-- Portfolio Item -->
         <div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
-            <div class="image-hover">
-                <a href="#">
-                    <figure>
-                        <img src="~/assets/img/portfolio/img4.jpg" alt="image4">
-                        <figcaption>
-                            <h3>Quam putamus</h3>
-                            <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam.</span>
-                        </figcaption>
-                    </figure>
-                </a>
+            <div class="image-hover gallery cf">
+                <div>
+                    <img src="~/assets/img/portfolio/img4.jpg" alt="image4">
+                </div>
             </div>
         </div>
         <!-- //Portfolio Item// -->
         <!-- Portfolio Item -->
         <div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
-            <div class="image-hover">
-                <a href="#">
-                    <figure>
-                        <img src="~/assets/img/portfolio/img5.jpg" alt="image5">
-                        <figcaption>
-                            <h3>Quam putamus</h3>
-                            <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam.</span>
-                        </figcaption>
-                    </figure>
-                </a>
+            <div class="image-hover gallery cf">
+                <div>
+                    <img src="~/assets/img/portfolio/img5.jpg" alt="image5">
+                </div>
             </div>
         </div>
         <!-- //Portfolio Item// -->
         <!-- Portfolio Item -->
         <div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
-            <div class="image-hover">
-                <a href="#">
-                    <figure>
-                        <img src="~/assets/img/portfolio/img6.jpg" alt="image6">
-                        <figcaption>
-                            <h3>Quam putamus</h3>
-                            <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam.</span>
-                        </figcaption>
-                    </figure>
-                </a>
+            <div class="image-hover gallery cf">
+               <div>
+                   <img src="~/assets/img/portfolio/img6.jpg" alt="image6">
+               </div>
             </div>
         </div>
         <!-- //Portfolio Item// -->
         <!-- Portfolio Item -->
         <div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
-            <div class="image-hover">
-                <a href="#">
-                    <figure>
-                        <img src="~/assets/img/portfolio/img7.jpg" alt="image7">
-                        <figcaption>
-                            <h3>Quam putamus</h3>
-                            <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam.</span>
-                        </figcaption>
-                    </figure>
-                </a>
+            <div class="image-hover gallery cf">
+                <div>
+                    <img src="~/assets/img/portfolio/img7.jpg" alt="image7">
+                </div>
             </div>
         </div>
         <!-- //Portfolio Item// -->
         <!-- Portfolio Item -->
         <div class="portfolio-item col-md-3 col-sm-6 col-xs-6 animate fadeInUp">
-            <div class="image-hover">
-                <a href="#">
-                    <figure>
-                        <img src="~/assets/img/portfolio/img8.jpg" alt="image8">
-                        <figcaption>
-                            <h3>Quam putamus</h3>
-                            <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam.</span>
-                        </figcaption>
-                    </figure>
-                </a>
+            <div class="image-hover gallery cf">
+               <div>
+                   <img src="~/assets/img/portfolio/img8.jpg" alt="image8">
+               </div>
             </div>
         </div>
         <!-- //Portfolio Item// -->
@@ -268,6 +341,11 @@
 
 <br />
 <hr />
+<div style="text-align:center;clear:both;">
+    <script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+    <script src="/follow.js" type="text/javascript"></script>
+</div>
+
 
 <div class="container no-padding gridgallery">
     <!-- Portfolio Header Text -->

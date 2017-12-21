@@ -1358,6 +1358,7 @@ i.fa.center {
   text-align: center;
   margin-bottom: 30px;
   max-width: 100%;
+  z-index:99;
 }
 .image-hover figure {
   margin: 0;
@@ -1452,7 +1453,7 @@ i.fa.center {
   transition: transform 0.4s, opacity 0.1s;
 }
 .portfolio-group .image-hover {
-  border: 4px solid #d1d1d1 !important;
+  /*border: 4px solid #d1d1d1 !important;*/
 }
 /*-----------------------------------------------------------------------------------*/
 /* Testimonials */
