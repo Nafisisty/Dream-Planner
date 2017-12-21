@@ -1,0 +1,52 @@
+﻿@*@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}*@
+
+@model IEnumerable<DreamPlanner_Main.Models.UserDefinedModels.Reservation>
+
+<h2>Reservation List</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ReservationCode)
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+            Hall
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalRent)
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReservationCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReservationDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hall.HallName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalRent)
+            </td>
+
+            <td>
+                @Html.ActionLink("Cancel", "Delete", new { id = item.ReservationId })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+

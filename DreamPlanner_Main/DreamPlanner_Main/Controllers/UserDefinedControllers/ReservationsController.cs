@@ -16,11 +16,23 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
     {
         private ProjectDbContext db = new ProjectDbContext();
 
+
+        public ActionResult ReservationList()
+        {
+            if (Authentication.IsAuthenticated == true)
+            {
+                var reservations = db.Reservations.Include(r => r.Hall).Include(r => r.Theme).Include(r => r.User).Where(r => r.UserId == Authentication.UserId);
+                return View(reservations.ToList());
+            }
+            else
+            {
+                return RedirectToAction("LogIn", "Authentication");
+            }
+        }
         // GET: Reservations
         public ActionResult Index()
         {
-            var reservations = db.Reservations.Include(r => r.Hall).Include(r => r.Theme).Include(r => r.User);
-            return View(reservations.ToList());
+            return View();
         }
 
         // GET: Reservations/Details/5
@@ -141,7 +153,7 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Reservation reservation = db.Reservations.Find(id);
+            Reservation reservation = db.Reservations.Include(r => r.Hall).Include(r => r.Theme).FirstOrDefault(r => r.ReservationId == id);
             if (reservation == null)
             {
                 return HttpNotFound();
@@ -154,10 +166,17 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Reservation reservation = db.Reservations.Find(id);
-            db.Reservations.Remove(reservation);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            if (Authentication.IsAuthenticated == true)
+            {
+                Reservation reservation = db.Reservations.Find(id);
+                db.Reservations.Remove(reservation);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return RedirectToAction("LogIn", "Authentication");
+            }
         }
 
         public JsonResult GetThemeByPartyType(int partyTypeId)
