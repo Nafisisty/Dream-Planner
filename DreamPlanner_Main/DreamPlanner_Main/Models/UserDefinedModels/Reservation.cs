@@ -26,6 +26,7 @@ namespace DreamPlanner_Main.Models.UserDefinedModels
         public DateTime ReservationDate { get; set; }
 
         [Required]
+        [DisplayName("Total Rent")]
         public int TotalRent { get; set; }
 
         public string ReservationCode { get; set; }

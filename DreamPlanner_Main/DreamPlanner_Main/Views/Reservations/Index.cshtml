@@ -4,6 +4,17 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Thank you for your reservation.</h2>
+<h2 style="text-align:center">Thank you for your reservation.</h2>
 
-<h4>An Email has sent to you with your reservation code. Please pay 50% advance within one week from reservation. Otherwise, your reservation will be cancelled. Bring your reservation code during payment.</h4>
+<h4 style="text-align:center">An Email has sent to you with your reservation code. Please pay 50% advance within one week from reservation. Otherwise, your reservation will be cancelled. Bring your reservation code during payment.</h4>
+
+<br />
+
+<div class="col-md-12" style="text-align:center">
+    <button class="btn btn-primary" type="button">
+        <i class="fa fa-home"></i>
+        @Html.ActionLink("Go Back To Home", "Index", "Home")
+    </button>
+</div>
+<br />
+<br />

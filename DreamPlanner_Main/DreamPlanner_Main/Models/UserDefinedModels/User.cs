@@ -17,6 +17,8 @@ namespace DreamPlanner_Main.Models.UserDefinedModels
         [Required]
         [DisplayName("Last Name")]
         public string LastName { get; set; }
+        [Required]
+        [DisplayName("Email")]
         [RegularExpression(@"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", ErrorMessage = "Please enter a valid email address")]
         [Remote("IsEmailUnique", "Users", ErrorMessage = "This email already exists")]
         public string UserEmail { get; set; }

@@ -182,9 +182,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712201435263_Version_1.cs" />
-    <Compile Include="Migrations\201712201435263_Version_1.Designer.cs">
-      <DependentUpon>201712201435263_Version_1.cs</DependentUpon>
+    <Compile Include="Migrations\201712211212107_Version_1.cs" />
+    <Compile Include="Migrations\201712211212107_Version_1.Designer.cs">
+      <DependentUpon>201712211212107_Version_1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -207,6 +207,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\audio\All About Us.mp3" />
+    <Content Include="assets\audio\Stuck Like Glue.mp3" />
     <Content Include="assets\css\bigPic.css" />
     <Content Include="assets\css\animate.css" />
     <Content Include="assets\css\bootstrap.css" />
@@ -630,8 +632,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712201435263_Version_1.resx">
-      <DependentUpon>201712201435263_Version_1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712211212107_Version_1.resx">
+      <DependentUpon>201712211212107_Version_1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

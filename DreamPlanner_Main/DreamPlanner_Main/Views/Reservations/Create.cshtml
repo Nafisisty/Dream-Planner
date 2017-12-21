@@ -43,7 +43,7 @@
                 @Html.EditorFor(model => model.ReservationDate, new { htmlAttributes = new { @class = "form-control margin-bottom-20 datepicker" } })
                 @Html.ValidationMessageFor(model => model.ReservationDate, "", new { @class = "text-danger" })
 
-                @Html.Label("Total Rent")
+                @Html.LabelFor(model => model.TotalRent)
                 @*<input id="TotalRent" class="form-control margin-bottom-20" type="text" readonly="readonly" />*@
                 @Html.EditorFor(model => model.TotalRent, new { htmlAttributes = new { @class = "form-control margin-bottom-20", @readonly = "readonly" } })
 
@@ -82,7 +82,9 @@
 
     $(document).ready(function () {
 
-        var disableddates = new Array();
+        GetRentAndReservedDates();
+
+        var disableddates = [""];
 
         $(".datepicker").datepicker({
             dateFormat: "mm/dd/yy",
@@ -116,7 +118,7 @@
             }
         });
 
-        GetRentAndReservedDates();
+        //GetRentAndReservedDates();
 
         var json = "";
         $.ajax({
@@ -145,25 +147,13 @@
                         $.each(data, function(key, value) {
                             $("#ThemeId").append('<option value=' + value.ThemeId + '>' + value.ThemeName + '</option>');
                         });
+                        GetRentAndReservedDates();
                     }
                 });
+
             });
 
         $("#ThemeId").change(function () {
-            @*var thmId = $("#ThemeId").val();
-            var prtpId = $("#PartyTypeId").val();
-            var hlId = $("#HallId").val();
-            $("#HallId").empty();
-            var json = { themeId: thmId, partyTypeId: prtpId,  hallId: hlId};
-            $.ajax({
-                type: "POST",
-                url: '@Url.Action("CalculateTotalRent", "Reservations")',
-                contentType: "application/json; charset=utf-8",
-                data: JSON.stringify(json),
-                success: function (data) {
-                    $("#TotalRent").val("" + data);
-                }
-            });*@
             GetRentAndReservedDates();
         });
 

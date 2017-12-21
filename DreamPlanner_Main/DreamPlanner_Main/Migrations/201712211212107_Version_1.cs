@@ -35,7 +35,7 @@ namespace DreamPlanner_Main.Migrations
                         UserId = c.Int(nullable: false, identity: true),
                         FirstName = c.String(nullable: false),
                         LastName = c.String(nullable: false),
-                        UserEmail = c.String(),
+                        UserEmail = c.String(nullable: false),
                         CityId = c.Int(nullable: false),
                         UserStreetAddress = c.String(nullable: false),
                         UserName = c.String(nullable: false),
