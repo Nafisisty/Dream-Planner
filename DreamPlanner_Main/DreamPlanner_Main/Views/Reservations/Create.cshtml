@@ -63,7 +63,7 @@
             }
 
         </div>
-        <div id="calendar"> </div>
+        @*<div id="calendar"> </div>*@
 
     </div>
 
@@ -86,7 +86,7 @@
 
         var disableddates = [""];
 
-        $(".datepicker").datepicker({
+        $("#ReservationDate").datepicker({
             dateFormat: "mm/dd/yy",
             changeMonth: true,
             changeYear: true,
@@ -108,10 +108,10 @@
 
                     // Now check if the current date is in disabled dates array.
                     if ($.inArray(currentdate, disableddates) != -1) {
-                        return [false];
+                        return [false, '', ''];
                     }
                     else {
-                        return [true];
+                        return [true, '', ''];
                     }
                 }
 

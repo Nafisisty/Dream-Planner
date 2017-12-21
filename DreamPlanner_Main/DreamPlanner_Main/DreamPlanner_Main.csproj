@@ -182,9 +182,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201712211212107_Version_1.cs" />
-    <Compile Include="Migrations\201712211212107_Version_1.Designer.cs">
-      <DependentUpon>201712211212107_Version_1.cs</DependentUpon>
+    <Compile Include="Migrations\201712211700341_Version_1.cs" />
+    <Compile Include="Migrations\201712211700341_Version_1.Designer.cs">
+      <DependentUpon>201712211700341_Version_1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -618,6 +618,7 @@
     <Content Include="Views\UserExperiences\Edit.cshtml" />
     <Content Include="Views\UserExperiences\Index.cshtml" />
     <Content Include="Views\UserExperiences\Delete.cshtml" />
+    <Content Include="Views\Reservations\ReservationList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -632,8 +633,8 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712211212107_Version_1.resx">
-      <DependentUpon>201712211212107_Version_1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712211700341_Version_1.resx">
+      <DependentUpon>201712211700341_Version_1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
