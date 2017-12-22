@@ -43,8 +43,8 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
             ViewBag.Message = "";
             if (Authentication.IsAuthenticated)
             {
-                var userExperience = db.UserExperiences.Find(Authentication.UserId);
-                if(userExperience == null)
+                var userExperience = db.UserExperiences.FirstOrDefault(u => u.UserId == Authentication.UserId);
+                if (userExperience == null)
                 {
                     ViewBag.RatingId = new SelectList(db.Ratings, "RatingId", "RatingName");
                     ViewBag.UserId = new SelectList(db.Users, "UserId", "FirstName");

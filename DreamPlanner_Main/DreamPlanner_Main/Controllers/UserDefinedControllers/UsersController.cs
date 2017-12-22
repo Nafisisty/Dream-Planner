@@ -56,7 +56,13 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
             {
                 db.Users.Add(user);
                 db.SaveChanges();
-                return RedirectToAction("LogIn", "Authentication");
+
+                Authentication.UserId = user.UserId;
+                Authentication.UserName = user.UserName;
+                Authentication.IsAuthenticated = true;
+                Authentication.UserStatus = true;
+
+                return RedirectToAction("Index", "Home");
             }
 
             ViewBag.CityId = new SelectList(db.Cities.Where(c => c.CountryId == 1).ToList(), "CityId", "CityName", user.CityId);

@@ -26,13 +26,13 @@
                     <!-- Header Social Icons -->
                     <ul class="social-icons circle pull-right">
                         <li class="social-twitter">
-                            <a href="https://twitter.com/" target="_blank" title="Twitter"></a>
+                            <a href="https://twitter.com/dreamplanner6" target="_blank" title="Twitter"></a>
                         </li>
                         <li class="social-facebook">
-                            <a href="https://www.facebook.com" target="_blank" title="Facebook"></a>
+                            <a href="https://www.facebook.com/Dream-planner-372656029861850/" target="_blank" title="Facebook"></a>
                         </li>
                         <li class="social-youtube">
-                            <a href="https://www.youtube.com/" target="_blank" title="Youtube"></a>
+                            <a href="https://www.youtube.com/?gl=SE" target="_blank" title="Youtube"></a>
                         </li>
                     </ul>
                     <!-- End Header Social Icons -->
@@ -51,7 +51,7 @@
                 <div id="container_hornav" class="container no-padding">
                     <!-- Logo -->
                     <div class="logo">
-                        <a href="#">
+                        <a>
                             <img src="~/assets/img/DreamPlannerLogo.png" alt="Logo" style="margin-top: -15px" />
                         </a>
                     </div>
@@ -105,17 +105,24 @@
                                     </li>
 
                                     <li>
-                                        @Html.ActionLink("About Us", "About", "Home")
-                                    </li>
-
-                                    <li>
-                                        @Html.ActionLink("Contact", "Contact", "Home")
+                                        @Html.ActionLink("Reserve A Party", "Create", "Reservations")
                                     </li>
 
                                     <li>
                                         @if (Authentication.IsAuthenticated)
                                         {
-                                            @Html.ActionLink("Log Out", "LogOff", "Authentication")
+                                            <span>Hello!! @Authentication.UserName</span>
+                                            <ul>
+                                                <li>
+                                                    @Html.ActionLink("Share Experience", "Create", "UserExperiences")
+                                                </li>
+                                                <li>
+                                                    @Html.ActionLink("Cancel Reservation", "ReservationList", "Reservations")
+                                                </li>
+                                                <li>
+                                                    @Html.ActionLink("Log Out", "LogOff", "Authentication")
+                                                </li>
+                                            </ul>
                                         }
                                         else
                                         {
@@ -172,10 +179,10 @@
                                 @Html.ActionLink("Services", "Service", "Home")
                             </li>
                             <li>
-                                @Html.ActionLink("Cancel Your Party", "ReservationList", "Reservations")
+                                @Html.ActionLink("Gallery", "Gallery", "Home")
                             </li>
                             <li>
-                                @Html.ActionLink("Share Your Experience", "Create", "UserExperiences")
+                                @Html.ActionLink("About Us", "About", "Home")
                             </li>
                             <li>
                                 @Html.ActionLink("Contact", "Contact", "Home")
