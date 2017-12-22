@@ -839,8 +839,6 @@ D:\Csharp\PA2515\RealProject\Dream-planner-1\DreamPlanner_Main\DreamPlanner_Main
 D:\Csharp\PA2515\RealProject\Dream-planner-1\DreamPlanner_Main\DreamPlanner_Main\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Csharp\PA2515\RealProject\Dream-planner-1\DreamPlanner_Main\DreamPlanner_Main\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\Csharp\PA2515\RealProject\Dream-planner-1\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.csprojResolveAssemblyReference.cache
-D:\Csharp\PA2515\RealProject\Dream-planner-1\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.Migrations.Version_1.resources
-D:\Csharp\PA2515\RealProject\Dream-planner-1\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.csproj.GenerateResource.Cache
 D:\Csharp\PA2515\RealProject\Dream-planner-1\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.dll
 D:\Csharp\PA2515\RealProject\Dream-planner-1\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.pdb
 C:\Users\keerthy\Desktop\lalai\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\bin\roslyn\csc.exe
@@ -1056,3 +1054,5 @@ C:\Users\Isty\Desktop\Applied Software Management\Dream-Planner\DreamPlanner_Mai
 C:\Users\Isty\Desktop\Applied Software Management\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.Migrations.Version_1.resources
 C:\Users\Isty\Desktop\Applied Software Management\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.csproj.GenerateResource.Cache
 C:\Users\Isty\Desktop\Applied Software Management\Dream-Planner\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.csprojResolveAssemblyReference.cache
+D:\Csharp\PA2515\RealProject\Dream-planner-1\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.Migrations.Version_1.resources
+D:\Csharp\PA2515\RealProject\Dream-planner-1\DreamPlanner_Main\DreamPlanner_Main\obj\Debug\DreamPlanner_Main.csproj.GenerateResource.Cache
