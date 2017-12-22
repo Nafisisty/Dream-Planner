@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using DreamPlanner_Main.Models;
 using DreamPlanner_Main.Models.UserDefinedModels;
 using System.Net.Mail;
+using System.Globalization;
 
 namespace DreamPlanner_Main.Controllers.UserDefinedControllers
 {
@@ -223,7 +224,7 @@ namespace DreamPlanner_Main.Controllers.UserDefinedControllers
         public JsonResult GetReservedDates(int hallId)
         {
             var dateList = db.Reservations.Where(r => r.HallId == hallId).ToList();
-            var dateArray = dateList.Select(d => d.ReservationDate.ToShortDateString()).ToArray();
+            var dateArray = dateList.Select(d => d.ReservationDate.ToString("MM/dd/yyyy")).ToArray();
             return Json(dateArray, JsonRequestBehavior.AllowGet);
         }
 
